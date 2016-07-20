@@ -27,8 +27,11 @@ values."
      ;; better-defaults
      emacs-lisp
      git
-     haskell
+     ;; Intero replaces haskell layer
+     ;;haskell
      haskell-ajm
+     intero
+     ipython-notebook
      lhaskell-ajm
      markdown
      ;; org
