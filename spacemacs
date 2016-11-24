@@ -29,8 +29,8 @@ values."
      git
      haskell
      haskell-ajm
-     ipython-notebook
      lhaskell-ajm
+     ipython-notebook
      markdown
      ;; org
      ;; (shell :variables
@@ -272,6 +272,7 @@ you should place your code here."
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
+ '(evil-want-Y-yank-to-eol t)
  '(fill-column 100)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
