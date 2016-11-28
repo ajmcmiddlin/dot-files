@@ -28,8 +28,8 @@ values."
      emacs-lisp
      git
      haskell
-     haskell-ajm
-     lhaskell-ajm
+     ;; haskell-ajm
+     ;; lhaskell-ajm
      ipython-notebook
      markdown
      ;; org
@@ -38,6 +38,7 @@ values."
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      osx
+     ruby
      scala
      syntax-checking
      themes-megapack
@@ -58,6 +59,12 @@ values."
 (setq-default dotspacemacs-configuration-layers
               '(auto-completion
                 (haskell :variables haskell-completion-backend 'intero)))
+
+(setq-default dotspacemacs-configuration-layers
+              '((haskell :variables haskell-enable-hindent-style "chris-done")))
+
+(defun dotspacemacs-configuration-layers ()
+  '((ruby :variables ruby-version-manager 'rvm)))
 
 (defun dotspacemacs/init ()
   "Initialization function.
@@ -106,7 +113,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(material
+                         solarized-dark
                          spacemacs-dark
                          niflheim
                          zenburn)
@@ -248,8 +256,10 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-  (add-to-list 'exec-path "~/.local/bin/"))
+  ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+  (add-hook 'haskell-mode-hook 'intero-mode)
+  ;; (add-to-list 'exec-path "~/.local/bin/")
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
