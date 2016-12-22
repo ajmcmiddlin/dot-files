@@ -13,7 +13,7 @@ values."
    dotspacemacs-distribution 'spacemacs
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '("~/.emacs.d/ajm-private")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
@@ -25,14 +25,16 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      ;; better-defaults
+     c-c++
+     cscope
      emacs-lisp
      git
      ;; Intero replaces haskell layer
-     ;;haskell
-     haskell-ajm
-     intero
+     haskell
+     ;; haskell-ajm
+     ;; intero
      ipython-notebook
-     lhaskell-ajm
+     ;;lhaskell-ajm
      markdown
      ;; org
      ;; (shell :variables
@@ -40,10 +42,13 @@ values."
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      osx
+     ruby
      scala
+     semantic
      syntax-checking
      themes-megapack
      version-control
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -104,7 +109,9 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(material
+                         material-light
+                         solarized-dark
                          spacemacs-dark
                          niflheim
                          zenburn)
