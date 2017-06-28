@@ -1,7 +1,7 @@
 import           XMonad                           (defaultConfig, xmonad)
 import           XMonad.Core                      (XConfig (..))
 import           XMonad.Hooks.EwmhDesktops        (ewmh)
-import           XMonad.Hooks.ManageDocks         (avoidStruts, docks)
+import           XMonad.Hooks.ManageDocks         (avoidStruts, docks, manageDocks)
 
 import           System.Taffybar.Hooks.PagerHints (pagerHints)
 
@@ -14,4 +14,6 @@ main = xmonad . docks . ewmh . pagerHints $ defaultConfig
     terminal = "uxrvt"
     -- avoidStruts tells windows to avoid the "strut" where docks live
   , layoutHook = avoidStruts $ layoutHook defaultConfig
+    -- let XMonad manage docks (taffybar)
+  , manageHook = manageDocks
   }
