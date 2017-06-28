@@ -1,17 +1,17 @@
-import System.Taffybar
+import           System.Taffybar
 
-import System.Taffybar.Systray
-import System.Taffybar.TaffyPager
-import System.Taffybar.SimpleClock
-import System.Taffybar.FreedesktopNotifications
-import System.Taffybar.Weather
-import System.Taffybar.MPRIS
+import           System.Taffybar.FreedesktopNotifications
+import           System.Taffybar.MPRIS
+import           System.Taffybar.SimpleClock
+import           System.Taffybar.Systray
+import           System.Taffybar.TaffyPager
+import           System.Taffybar.Weather
 
-import System.Taffybar.Widgets.PollingBar
-import System.Taffybar.Widgets.PollingGraph
+import           System.Taffybar.Widgets.PollingBar
+import           System.Taffybar.Widgets.PollingGraph
 
-import System.Information.Memory
-import System.Information.CPU
+import           System.Information.CPU
+import           System.Information.Memory
 
 memCallback = do
   mi <- parseMeminfo
