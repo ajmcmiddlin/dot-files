@@ -1,5 +1,6 @@
 import           System.Taffybar
 
+import           System.Taffybar.Battery (batteryBarNew, defaultBatteryConfig)
 import           System.Taffybar.FreedesktopNotifications
 import           System.Taffybar.MPRIS
 import           System.Taffybar.SimpleClock
@@ -38,7 +39,8 @@ main = do
       mem = pollingGraphNew memCfg 1 memCallback
       cpu = pollingGraphNew cpuCfg 0.5 cpuCallback
       tray = systrayNew
+      batt = batteryBarNew defaultBatteryConfig 60.0
   defaultTaffybar defaultTaffybarConfig { barHeight = 20
                                         , startWidgets = [ pager, note ]
-                                        , endWidgets = [ tray, wea, clock, mem, cpu, mpris ]
+                                        , endWidgets = [ tray, batt, wea, clock, mem, cpu, mpris ]
                                         }
