@@ -1,0 +1,3 @@
+taffybar
+nm-applet
+owncloud
