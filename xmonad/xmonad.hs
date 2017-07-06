@@ -25,7 +25,7 @@ myKeys conf@(XConfig {modMask = modm, keys = defaultKeys}) =
 main :: IO ()
 main = xmonad . docks . ewmh . pagerHints $ defaultConfig
   {
-    terminal = "uxrvt"
+    terminal = "urxvt"
     -- avoidStruts tells windows to avoid the "strut" where docks live
   , layoutHook = avoidStruts $ layoutHook defaultConfig
     -- let XMonad manage docks (taffybar)
