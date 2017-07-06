@@ -62,6 +62,7 @@
     silver-searcher
     slop
     thunderbird
+    thunar
     upower
     #st
     wget
@@ -94,7 +95,8 @@
     layout = "us";
     desktopManager.default = "none";
     desktopManager.xterm.enable = false;
-    displayManager.lightdm.enable = true;
+    # Try SLiM as the display manager
+    # displayManager.lightdm.enable = true;
     xkbOptions = "ctrl:nocaps";
 
     windowManager.default = "xmonad";
@@ -103,6 +105,12 @@
       enableContribAndExtras = true;
       extraPackages = haskellPackages : [haskellPackages.taffybar];
     };
+
+    synaptics = {
+      enable = true;
+      twoFingerScroll = true;
+      horizontalScroll = true;
+    }
   };
   # services.xserver.xkbOptions = "eurosign:e";
 
