@@ -60,16 +60,20 @@
     networkmanagerapplet
     nix-prefetch-git
     owncloud-client
+    powertop
     rxvt_unicode-with-plugins
     silver-searcher
     slop
     thunderbird
     xfce.thunar
+    xfce.xfce4icontheme
+    xfce.xfce4settings
     upower
     vim
     wget
     which
     xclip
+    xorg.xev
     xscreensaver
     zeal
   ];
@@ -81,6 +85,8 @@
 
   # Enable upower service - used by taffybar's battery widget
   services.upower.enable = true;
+
+  powerManagement.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
