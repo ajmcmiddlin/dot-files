@@ -59,6 +59,8 @@
     maim
     networkmanagerapplet
     nix-prefetch-git
+    openconnect
+    openconnect_openssl
     owncloud-client
     powertop
     rxvt_unicode-with-plugins
@@ -68,10 +70,13 @@
     xfce.thunar
     xfce.xfce4icontheme
     xfce.xfce4settings
+    udisks2
     upower
     vim
+    virtualbox
     wget
     which
+    xorg.xbacklight
     xclip
     xorg.xev
     xscreensaver
@@ -118,6 +123,8 @@
       enable = true;
       twoFingerScroll = true;
       horizontalScroll = true;
+      tapButtons = true;
+      palmDetect = true;
     };
   };
 
