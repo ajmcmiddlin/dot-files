@@ -17,6 +17,7 @@ myKeys conf@(XConfig {modMask = modm}) =
   let kees =
         M.fromList [ ((0, XT.xK_Print), spawn "maim -c 1,0,0,0.6 -s ~/screenshots/$(date +%F_%T).png")
                    , ((modm, XT.xK_Print), spawn "maim -c 1,0,0,0.6 -s /dev/stdout | xclip -selection clipboard -t image/png -i")
+                   , ((XT.controlMask .|. XT.mod1Mask, XT.xK_l), spawn "xscreensaver-command -lock")
                    ]
   in kees <> keys def conf
 
