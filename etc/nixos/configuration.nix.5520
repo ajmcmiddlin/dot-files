@@ -134,6 +134,10 @@
       horizontalScroll = true;
       tapButtons = true;
       palmDetect = true;
+      additionalOptions = ''
+      Option            "VertScrollDelta"  "-111"
+      Option            "HorizScrollDelta" "-111"
+      '';
     };
   };
 
