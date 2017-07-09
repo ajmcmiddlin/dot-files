@@ -91,6 +91,12 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Handle lid close
+  services.logind.extraConfig = ''
+  HandleLidSwitch=suspend
+  HandlePowerKey=hibernate
+  '';
+
   # Enable upower service - used by taffybar's battery widget
   services.upower.enable = true;
 
