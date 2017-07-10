@@ -13,7 +13,7 @@ values."
    dotspacemacs-distribution 'spacemacs
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/.emacs.d/ajm-private")
+   dotspacemacs-configuration-layer-path '("~/.emacs.d/private-ajm")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
@@ -26,24 +26,24 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      ;; better-defaults
-     c-c++
-     cscope
+     ;; c-c++
+     ;; cscope
      emacs-lisp
      git
      github
      haskell
-     ;; haskell-ajm
-     ipython-notebook
-     ;;lhaskell-ajm
+     haskell-ajm
+     ;; ipython-notebook
+     ;; lhaskell-ajm
      markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     osx
+     ;; osx
      ruby
-     scala
+     ;; scala
      semantic
      syntax-checking
      themes-megapack
@@ -62,9 +62,9 @@ values."
    ;; the list `dotspacemacs-configuration-layers'. (default t)
    dotspacemacs-delete-orphan-packages t))
 
-(setq-default dotspacemacs-configuration-layers
-              '(auto-completion
-                (haskell :variables haskell-completion-backend 'intero)))
+;; (setq-default dotspacemacs-configuration-layers
+;;               '(auto-completion
+;;                 (haskell :variables haskell-completion-backend 'intero)))
 
 (setq-default dotspacemacs-configuration-layers
               '((haskell :variables haskell-enable-hindent-style "chris-done")))
@@ -253,7 +253,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/user-init ()
@@ -263,8 +263,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-  (add-hook 'haskell-mode-hook 'intero-mode)
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+  ;; (add-hook 'haskell-mode-hook 'intero-mode)
   ;; (add-to-list 'exec-path "~/.local/bin/")
   )
 
@@ -338,5 +338,4 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ )
