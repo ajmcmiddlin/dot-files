@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
+# Start keychain and unlock our private key. Clear any previously loaded keys - i.e. assume login
+# is unauthorised until proven otherwise. Don't ask for passphrases yet - just set it up so that
+# when we add keys they're available to everyone. To add a key, do something like:
+# `keychain ~/.ssh/id_rsa --nogui`
+eval $(keychain --clear --noask --eval)
+
 taffybar &
-xscreensaver &
+xscreensaver --no-splash &
 nm-applet &
 owncloud &
