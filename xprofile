@@ -10,3 +10,9 @@ taffybar &
 xscreensaver --no-splash &
 nm-applet &
 owncloud &
+emacs &
+chromium &
+thunderbird &
+keepassx &
+# Signal
+chromium --app-id=bikioccmkafdpakkkcpdbppfkghcmihk &
