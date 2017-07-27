@@ -2,13 +2,15 @@ import qualified Data.Map                         as M
 import           Data.Monoid                      ((<>))
 
 import qualified Graphics.X11.Types               as XT
-import           XMonad                           (Layout, X, XConfig (..),
-                                                   def, spawn, xmonad,
-                                                   (.|.))
+import           XMonad                           (Layout, ManageHook, X,
+                                                   XConfig (..), def, spawn,
+                                                   windows, xmonad, (.|.))
+import           XMonad.Actions.SpawnOn           (manageSpawn, spawnOn)
 import           XMonad.Hooks.EwmhDesktops        (ewmh)
 import           XMonad.Hooks.ManageDocks         (avoidStruts, docks,
                                                    manageDocks)
-import           XMonad.ManageHook                ((<+>))
+import           XMonad.ManageHook                (className, composeAll,
+                                                   doShift, (-->), (<+>), (=?))
 
 import           System.Taffybar.Hooks.PagerHints (pagerHints)
 
@@ -33,16 +35,39 @@ myKeys conf@(XConfig {modMask = modm}) =
                    ]
   in kees <> keys def conf
 
+myWorkspaces :: [String]
+myWorkspaces =
+  [ "1:Web"
+  , "2:Work"
+  , "3:WorkBrowser"
+  , "4"
+  , "5"
+  , "6"
+  , "7"
+  , "8:Mail"
+  , "9:Chat"
+  ]
+
+myManageHook :: ManageHook
+myManageHook =
+  composeAll [ className =? "Emacs" --> doShift "2:Work"
+             , className =? "Thunderbird" --> doShift "8:Mail"
+             -- Below is the class name for Signal (launched via Chrome)
+             , className =? "crx_bikioccmkafdpakkkcpdbppfkghcmihk" --> doShift "9:Chat"
+             , className =? "Keepassx" --> doShift "9:Chat"
+             ]
+
 -- docks: add dock (panel) functionality to your configuration
 -- ewmh: https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints - lets XMonad talk to panels
 -- pagerHints: add support for Taffybar's current layout and workspaces hints
 main :: IO ()
 main = xmonad . docks . ewmh . pagerHints $ def
   {
-    terminal = "urxvt"
+   keys = myKeys
     -- avoidStruts tells windows to avoid the "strut" where docks live
   , layoutHook = avoidStruts $ layoutHook def
     -- let XMonad manage docks (taffybar)
-  , manageHook = manageDocks <+> manageHook def
-  , keys = myKeys
+  , manageHook = myManageHook <+> manageDocks <+> manageHook def
+  , terminal = "urxvt"
+  , workspaces = myWorkspaces
   }
