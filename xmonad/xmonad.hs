@@ -48,6 +48,7 @@ myWorkspaces =
   , "9:Chat"
   ]
 
+-- Class name can be found with `xprop | grep WM_CLASS`
 myManageHook :: ManageHook
 myManageHook =
   composeAll [ className =? "Emacs" --> doShift "2:Work"
