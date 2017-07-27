@@ -1,0 +1,2 @@
+-- Lambda prompt and no list of imports. Use `:show imports` if you need to see them.
+:set prompt  "\x03BB> "
