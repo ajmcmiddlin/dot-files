@@ -56,9 +56,12 @@
     cabal-install
     calibre
     chromium
+    cifs-utils
     dmenu
     emacs
+    evince
     exfat
+    firefox
     ghc
     git
     gnumake
@@ -66,12 +69,14 @@
     haskellPackages.stylish-haskell
     haskellPackages.taffybar
     htop
+    inkscape
     keepassx2
     keychain
     libreoffice
     maim
     networkmanagerapplet
     nix-prefetch-git
+    nix-repl
     openconnect
     openconnect_openssl
     owncloud-client
@@ -81,6 +86,7 @@
     slop
     sqlite
     thunderbird
+    tigervnc
     xfce.thunar
     xfce.xfce4icontheme
     xfce.xfce4settings
