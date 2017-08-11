@@ -56,15 +56,22 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    ;; Prevents nix-shel path from being loaded
+                                    ;; If packages expect or require this package, then try removing it below
+                                    ;; and adding this to user-init: `(setq-default exec-path-from-shell-variables '("GO…" "RUST…"))`
+                                    ;; See https://github.com/syl20bnr/spacemacs/pull/5024#issuecomment-183136832
+                                    ;; and https://github.com/syl20bnr/spacemacs/issues/2294
+                                    exec-path-from-shell
+                                   )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
    dotspacemacs-delete-orphan-packages t))
 
-;; (setq-default dotspacemacs-configuration-layers
-;;               '(auto-completion
-;;                 (haskell :variables haskell-completion-backend 'intero)))
+(setq-default dotspacemacs-configuration-layers
+              '(auto-completion
+                (haskell :variables haskell-completion-backend 'dante)))
 
 (setq-default dotspacemacs-configuration-layers
               '((haskell :variables haskell-enable-hindent-style "chris-done")))
@@ -129,7 +136,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("SF Mono"
+   dotspacemacs-default-font '("DejaVu Sans Mono"
                                :size 13
                                :weight normal
                                :width normal
@@ -253,7 +260,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'trailing
+   dotspacemacs-whitespace-cleanup 'nil
    ))
 
 (defun dotspacemacs/user-init ()
@@ -264,7 +271,7 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-  ;; (add-hook 'haskell-mode-hook 'intero-mode)
+   (add-hook 'haskell-mode-hook 'dante-mode)
   ;; (add-to-list 'exec-path "~/.local/bin/")
   )
 
