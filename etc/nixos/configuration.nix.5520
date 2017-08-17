@@ -49,7 +49,7 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     ansible
     arandr
     cabal2nix
@@ -66,8 +66,6 @@
     git
     gnumake
     gnupg
-    haskellPackages.stylish-haskell
-    haskellPackages.taffybar
     htop
     inkscape
     keepassx2
@@ -103,7 +101,15 @@
     xorg.xev
     xscreensaver
     zeal
-  ];
+  ]) ++
+  (with pkgs.haskellPackages; [
+    stylish-haskell
+    taffybar
+    apply-refact
+    hlint
+    hasktags
+    hoogle
+  ]);
 
   # Enable virtualisation - otherwise get missing vboxdrv error
   virtualisation.virtualbox.host.enable = true;
