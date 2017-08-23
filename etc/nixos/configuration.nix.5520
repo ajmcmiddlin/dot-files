@@ -107,7 +107,7 @@
   (with pkgs.haskellPackages; [
     stylish-haskell
     taffybar
-    apply-refact
+    # apply-refact
     hlint
     hasktags
     hoogle
