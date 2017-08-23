@@ -59,6 +59,7 @@
     cifs-utils
     dmenu
     emacs
+    encfs
     evince
     exfat
     firefox
@@ -78,6 +79,7 @@
     openconnect
     openconnect_openssl
     owncloud-client
+    pass
     powertop
     rxvt_unicode-with-plugins
     silver-searcher
