@@ -74,7 +74,7 @@
     libreoffice
     maim
     networkmanagerapplet
-    nix-prefetch-git
+    nix-prefetch-scripts
     nix-repl
     openconnect
     openconnect_openssl
