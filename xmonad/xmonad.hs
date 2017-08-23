@@ -32,6 +32,7 @@ myKeys conf@(XConfig {modMask = modm}) =
                    , ((0, xK_X86AudioMute), spawn "amixer sset Master toggle")
                    , ((XT.controlMask .|. XT.mod1Mask, XT.xK_q), spawn "~/.screenlayout/laptop-only.sh")
                    , ((XT.controlMask .|. XT.mod1Mask, XT.xK_w), spawn "~/.screenlayout/the-fort.sh")
+                   , ((modm .|. XT.shiftMask, XT.xK_p), spawn "~/bin/passmenu")
                    ]
   in kees <> keys def conf
 
