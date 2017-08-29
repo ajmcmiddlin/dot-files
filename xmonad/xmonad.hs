@@ -23,7 +23,7 @@ myKeys conf@(XConfig {modMask = modm}) =
       xK_X86AudioMute         = 0x1008ff12
       kees =
         M.fromList [ ((0, XT.xK_Print), spawn "maim -c 1,0,0,0.6 -s ~/screenshots/$(date +%F_%T).png")
-                   , ((modm, XT.xK_Print), spawn "maim -c 1,0,0,0.6 -s /dev/stdout | xclip -selection clipboard -t image/png -i")
+                   , ((modm, XT.xK_Print), spawn "maim -s --format png -c 1,0,0,0.6 /dev/stdout | xclip -selection clipboard -t image/png -i")
                    , ((XT.controlMask .|. XT.mod1Mask, XT.xK_l), spawn "xscreensaver-command -lock")
                    , ((0, xK_X86MonBrightnessDown), spawn "xbacklight -dec 5")
                    , ((0, xK_X86MonBrightnessUp), spawn "xbacklight -inc 5")
