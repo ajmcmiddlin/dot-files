@@ -7,12 +7,12 @@
 eval $(keychain --clear --noask --eval)
 
 taffybar &
-xscreensaver --no-splash &
 nm-applet &
 owncloud &
 emacs &
 chromium &
 thunderbird &
-keepassx &
+qtpass &
+xscreensaver --no-splash &
 # Signal
 chromium --app-id=bikioccmkafdpakkkcpdbppfkghcmihk &
