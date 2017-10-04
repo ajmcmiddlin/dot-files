@@ -76,6 +76,8 @@
     networkmanagerapplet
     nix-prefetch-scripts
     nix-repl
+    octave
+    openarena
     openconnect
     openconnect_openssl
     owncloud-client
@@ -140,7 +142,7 @@
   # networking.firewall.enable = false;
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver = {
