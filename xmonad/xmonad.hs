@@ -44,7 +44,7 @@ myWorkspaces =
   , "4"
   , "5"
   , "6"
-  , "7"
+  , "7:Pass"
   , "8:Mail"
   , "9:Chat"
   ]
@@ -56,7 +56,7 @@ myManageHook =
              , className =? "Thunderbird" --> doShift "8:Mail"
              -- Below is the class name for Signal (launched via Chrome)
              , className =? "crx_bikioccmkafdpakkkcpdbppfkghcmihk" --> doShift "9:Chat"
-             , className =? "Keepassx" --> doShift "9:Chat"
+             , className =? "QtPass" --> doShift "7:Pass"
              ]
 
 -- docks: add dock (panel) functionality to your configuration
