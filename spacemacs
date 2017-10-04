@@ -17,9 +17,7 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '(
-     html
-     ;; ----------------------------------------------------------------
+   '(;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
@@ -33,9 +31,13 @@ values."
      github
      haskell
      haskell-ajm
-     ;; ipython-notebook
+     html
+     ipython-notebook
+     javascript
      ;; lhaskell-ajm
      markdown
+     nixos
+     octave
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
