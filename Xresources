@@ -5,6 +5,19 @@ URxvt.font: xft:monaco:size=10
 ! Needed to make Solarized work
 URxvt.intensityStyles: false
 
+! Make the PRIMARY selection copy to CLIPBOARD
+! URxvt.perl-ext-common: selection-to-clipboard,clipboard
+
+! From dalaing - sync primary selection and clipboard
+URxvt.perl-ext-common: default,matcher,tabbed,clipboard
+URxvt.url-launcher: firefox
+URxvt.matcher.button: 1
+URxvt.keysym.C-S-c: perl:clipboard:copy
+URxvt.keysym.C-S-v: perl:clipboard:paste
+URxvt.iso14755: false
+URxvt.clipboard.copycmd: xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! COLOURS
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
+. ~/.profile
+
 # Start keychain and unlock our private key. Clear any previously loaded keys - i.e. assume login
 # is unauthorised until proven otherwise. Don't ask for passphrases yet - just set it up so that
 # when we add keys they're available to everyone. To add a key, do something like:
 # `keychain ~/.ssh/id_rsa --nogui`
-eval $(keychain --clear --noask --eval)
+eval $(keychain --clear --noask --agents gpg,ssh --eval)
 
+xscreensaver --no-splash &
 taffybar &
 nm-applet &
 owncloud &
@@ -13,6 +16,13 @@ emacs &
 chromium &
 thunderbird &
 qtpass &
-xscreensaver --no-splash &
 # Signal
 chromium --app-id=bikioccmkafdpakkkcpdbppfkghcmihk &
+parcellite &
+
+num_monitors=$(xrandr --listactivemonitors | head -n 1 | cut -d' ' -f 2)
+if (( num_monitors = 2 )); then
+    ~/.screenlayout/the-fort.sh
+else
+    ~/.screenlayout/laptop-only.sh
+fi
