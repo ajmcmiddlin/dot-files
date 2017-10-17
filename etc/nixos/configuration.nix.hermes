@@ -14,7 +14,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "hermes"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true;
 
   # LUKS root device
   boot.initrd.luks.devices = [
@@ -38,17 +39,30 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    wget vim
+    arandr
+    cabal2nix
+    cabal-install
+    dmenu
+    emacs
     firefox
-    xscreensaver
     git
     gnupg
-    pass
-    owncloud-client
     htop
-    dmenu
-    arandr
-    emacs
+    networkmanagerapplet
+    owncloud-client
+    pass
+    qtpass
+    rxvt_unicode-with-plugins
+    haskellPackages.taffybar
+    vim
+    wget 
+    xorg.xbacklight
+    xscreensaver
+
+    # For clipboard syncing
+    xsel
+    parcellite
+    xdotool
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -58,6 +72,12 @@
   # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 
   # List services that you want to enable:
+
+  # Handle lid close
+  services.logind.extraConfig = ''
+  HandleLidSwitch=suspend
+  HandlePowerKey=hibernate
+  '';
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -89,7 +109,14 @@
   };
 
   # Enable touchpad support.
-  services.xserver.libinput.enable = true;
+  services.xserver.libinput = {
+    enable = true;
+    naturalScrolling = true;
+  };
+
+  # Enable upower service - used by taffybar's battery widget
+  services.upower.enable = true;
+  powerManagement.enable = true;
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
