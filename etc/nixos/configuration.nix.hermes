@@ -48,12 +48,17 @@
     git
     gnupg
     htop
+    maim
     networkmanagerapplet
     owncloud-client
     pass
+    powertop
     qtpass
     rxvt_unicode-with-plugins
+    slop
     haskellPackages.taffybar
+    thunderbird
+    udisks2
     vim
     wget 
     xorg.xbacklight
