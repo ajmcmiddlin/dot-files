@@ -34,13 +34,13 @@ main = do
       clock = textClockNew Nothing "<span fgcolor='orange'>%a %b %_d %H:%M:%S</span>" 1
       pager = taffyPagerNew defaultPagerConfig
       note = notifyAreaNew defaultNotificationConfig
-      wea = weatherNew (defaultWeatherConfig "KMSN") 10
-      mpris = mprisNew defaultMPRISConfig
+      -- wea = weatherNew (defaultWeatherConfig "KMSN") 10
+      -- mpris = mprisNew defaultMPRISConfig
       mem = pollingGraphNew memCfg 1 memCallback
       cpu = pollingGraphNew cpuCfg 0.5 cpuCallback
       tray = systrayNew
       batt = batteryBarNew defaultBatteryConfig 60.0
   defaultTaffybar defaultTaffybarConfig { barHeight = 20
                                         , startWidgets = [ pager, note ]
-                                        , endWidgets = [ tray, batt, wea, clock, mem, cpu, mpris ]
+                                        , endWidgets = [ tray, batt, clock, mem, cpu ]
                                         }
