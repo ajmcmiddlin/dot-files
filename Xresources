@@ -1,6 +1,13 @@
 ! Disable scrollbar
 URxvt*scrollBar:false
-URxvt.font: xft:monaco:size=10
+URxvt.font:     xft:Monospace:size=12:antialias=true
+URxvt.boldFont: xft:Monospace:bold:size=12:antialias=true
+
+URxvt.keysym.C-equal:      font-size:increase
+URxvt.keysym.C-plus:       font-size:incglobal
+URxvt.keysym.C-minus:      font-size:decrease
+URxvt.keysym.C-underscore: font-size:decglobal
+
 
 ! Needed to make Solarized work
 URxvt.intensityStyles: false
@@ -9,7 +16,7 @@ URxvt.intensityStyles: false
 ! URxvt.perl-ext-common: selection-to-clipboard,clipboard
 
 ! From dalaing - sync primary selection and clipboard
-URxvt.perl-ext-common: default,matcher,tabbed,clipboard
+URxvt.perl-ext-common: default,matcher,tabbed,clipboard,font-size
 URxvt.url-launcher: firefox
 URxvt.matcher.button: 1
 URxvt.keysym.C-S-c: perl:clipboard:copy
