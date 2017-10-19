@@ -6,7 +6,7 @@
 # is unauthorised until proven otherwise. Don't ask for passphrases yet - just set it up so that
 # when we add keys they're available to everyone. To add a key, do something like:
 # `keychain ~/.ssh/id_rsa --nogui`
-eval $(keychain --clear --noask --agents gpg,ssh --eval)
+eval $(keychain --clear --noask --agents ssh --eval)
 
 xscreensaver --no-splash &
 taffybar &
