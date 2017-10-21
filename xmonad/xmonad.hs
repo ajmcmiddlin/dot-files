@@ -9,6 +9,7 @@ import           XMonad.Actions.SpawnOn           (manageSpawn, spawnOn)
 import           XMonad.Hooks.EwmhDesktops        (ewmh)
 import           XMonad.Hooks.ManageDocks         (avoidStruts, docks,
                                                    manageDocks)
+import           XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
 import           XMonad.ManageHook                (className, composeAll,
                                                    doShift, (-->), (<+>), (=?))
 
@@ -57,6 +58,7 @@ myManageHook =
              -- Below is the class name for Signal (launched via Chrome)
              , className =? "crx_bikioccmkafdpakkkcpdbppfkghcmihk" --> doShift "9:Chat"
              , className =? "QtPass" --> doShift "7:Pass"
+             , (isFullscreen --> doFullFloat)
              ]
 
 -- docks: add dock (panel) functionality to your configuration
