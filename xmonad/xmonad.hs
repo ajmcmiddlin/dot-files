@@ -10,6 +10,7 @@ import           XMonad.Hooks.EwmhDesktops        (ewmh)
 import           XMonad.Hooks.ManageDocks         (avoidStruts, docks,
                                                    manageDocks)
 import           XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
+import           XMonad.Layout.NoBorders (smartBorders)
 import           XMonad.ManageHook                (className, composeAll,
                                                    doShift, (-->), (<+>), (=?))
 
@@ -69,9 +70,10 @@ main = xmonad . docks . ewmh . pagerHints $ def
   {
    keys = myKeys
     -- avoidStruts tells windows to avoid the "strut" where docks live
-  , layoutHook = avoidStruts $ layoutHook def
+  , layoutHook = smartBorders $ avoidStruts $ layoutHook def
     -- let XMonad manage docks (taffybar)
   , manageHook = myManageHook <+> manageDocks <+> manageHook def
   , terminal = "urxvt"
   , workspaces = myWorkspaces
+  , borderWidth = 3
   }
