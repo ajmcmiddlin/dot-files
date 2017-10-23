@@ -293,9 +293,6 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (uuidgen toc-org rake osx-dictionary org-plus-contrib org-bullets minitest link-hint intero hlint-refactor hindent hide-comnt helm-hoogle haskell-snippets git-link flycheck-haskell eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff dumb-jump f darkokai-theme company-ghci company-ghc ghc haskell-mode company-cabal column-enforce-mode cmm-mode pcre2el spinner autothemer inf-ruby highlight bind-map helm-cscope xcscope stickyfunc-enhance srefactor disaster company-c-headers cmake-mode clang-format zenburn-theme yaml-mode ws-butler window-numbering ujelly-theme tao-theme spacemacs-theme spaceline planet-theme persp-mode orgit organic-green-theme open-junk-file omtose-phellack-theme neotree naquadah-theme monokai-theme moe-theme markdown-toc markdown-mode majapahit-theme magit-gitflow leuven-theme indent-guide hl-todo help-fns+ helm-themes helm-projectile helm-make projectile helm-descbinds helm-c-yasnippet helm-ag gruvbox-theme grandshell-theme gotham-theme google-translate git-messenger expand-region exec-path-from-shell evil-surround evil-search-highlight-persist evil-mc evil-matchit evil-magit magit magit-popup evil-iedit-state iedit evil-exchange ensime sbt-mode scala-mode ein request websocket dracula-theme diff-hl darktooth-theme company-quickhelp color-theme-sanityinc-tomorrow bundler badwolf-theme auto-yasnippet yasnippet auto-compile apropospriate-theme anti-zenburn-theme ample-theme ace-link ace-jump-helm-line auto-complete avy anzu smartparens flycheck git-gutter git-commit with-editor company helm helm-core hydra dash quelpa package-build use-package which-key evil material-theme zonokai-theme zen-and-art-theme volatile-highlights vi-tilde-fringe undo-tree underwater-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme stekene-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smooth-scrolling smeargle seti-theme s rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reverse-theme reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters railscasts-theme purple-haze-theme professional-theme powerline popwin popup pkg-info phoenix-dark-pink-theme phoenix-dark-mono-theme pbcopy pastels-on-dark-theme paradox page-break-lines packed osx-trash oldlace-theme occidental-theme obsidian-theme noflet noctilux-theme niflheim-theme mustang-theme move-text monochrome-theme molokai-theme mmm-mode minimal-theme macrostep lush-theme lorem-ipsum linum-relative light-soap-theme launchctl jbeans-theme jazz-theme ir-black-theme inkpot-theme info+ ido-vertical-mode hungry-delete highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme helm-swoop helm-mode-manager helm-gitignore helm-flx helm-company hc-zenburn-theme gruber-darker-theme goto-chg golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-gutter-fringe git-gutter-fringe+ gh-md gandalf-theme flycheck-pos-tip flx-ido flatui-theme flatland-theme firebelly-theme fill-column-indicator farmhouse-theme fancy-battery evil-visualstar evil-tutor evil-numbers evil-nerd-commenter evil-lisp-state evil-indent-plus evil-escape evil-args evil-anzu eval-sexp-fu espresso-theme elisp-slime-nav django-theme diminish define-word darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-statistics colorsarenice-theme color-theme-sanityinc-solarized clues-theme clean-aindent-mode cl-generic chruby cherry-blossom-theme busybee-theme buffer-move bubbleberry-theme bracketed-paste birds-of-paradise-plus-theme bind-key auto-highlight-symbol async ample-zen-theme alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ac-ispell)))
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#839496")
@@ -330,6 +327,9 @@ you should place your code here."
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+ '(package-selected-packages
+   (quote
+    (winum web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode nix-mode magit-gh-pulls madhat2r-theme livid-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js-doc parent-mode helm-nixos-options helm-css-scss haml-mode gitignore-mode github-search github-clone github-browse-file fringe-helper git-gutter+ gist gh marshal logito pcache ht fuzzy pos-tip epl flx emmet-mode skewer-mode request-deferred deferred js2-mode simple-httpd company-web web-completion-data company-tern dash-functional tern company-nixos-options nixos-options coffee-mode uuidgen toc-org rake osx-dictionary org-plus-contrib org-bullets minitest link-hint intero hlint-refactor hindent hide-comnt helm-hoogle haskell-snippets git-link flycheck-haskell eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff dumb-jump f darkokai-theme company-ghci company-ghc ghc haskell-mode company-cabal column-enforce-mode cmm-mode pcre2el spinner autothemer inf-ruby highlight bind-map helm-cscope xcscope stickyfunc-enhance srefactor disaster company-c-headers cmake-mode clang-format zenburn-theme yaml-mode ws-butler window-numbering ujelly-theme tao-theme spacemacs-theme spaceline planet-theme persp-mode orgit organic-green-theme open-junk-file omtose-phellack-theme neotree naquadah-theme monokai-theme moe-theme markdown-toc markdown-mode majapahit-theme magit-gitflow leuven-theme indent-guide hl-todo help-fns+ helm-themes helm-projectile helm-make projectile helm-descbinds helm-c-yasnippet helm-ag gruvbox-theme grandshell-theme gotham-theme google-translate git-messenger expand-region exec-path-from-shell evil-surround evil-search-highlight-persist evil-mc evil-matchit evil-magit magit magit-popup evil-iedit-state iedit evil-exchange ensime sbt-mode scala-mode ein request websocket dracula-theme diff-hl darktooth-theme company-quickhelp color-theme-sanityinc-tomorrow bundler badwolf-theme auto-yasnippet yasnippet auto-compile apropospriate-theme anti-zenburn-theme ample-theme ace-link ace-jump-helm-line auto-complete avy anzu smartparens flycheck git-gutter git-commit with-editor company helm helm-core hydra dash quelpa package-build use-package which-key evil material-theme zonokai-theme zen-and-art-theme volatile-highlights vi-tilde-fringe undo-tree underwater-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme stekene-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smooth-scrolling smeargle seti-theme s rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reverse-theme reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters railscasts-theme purple-haze-theme professional-theme powerline popwin popup pkg-info phoenix-dark-pink-theme phoenix-dark-mono-theme pbcopy pastels-on-dark-theme paradox page-break-lines packed osx-trash oldlace-theme occidental-theme obsidian-theme noflet noctilux-theme niflheim-theme mustang-theme move-text monochrome-theme molokai-theme mmm-mode minimal-theme macrostep lush-theme lorem-ipsum linum-relative light-soap-theme launchctl jbeans-theme jazz-theme ir-black-theme inkpot-theme info+ ido-vertical-mode hungry-delete highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme helm-swoop helm-mode-manager helm-gitignore helm-flx helm-company hc-zenburn-theme gruber-darker-theme goto-chg golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-gutter-fringe git-gutter-fringe+ gh-md gandalf-theme flycheck-pos-tip flx-ido flatui-theme flatland-theme firebelly-theme fill-column-indicator farmhouse-theme fancy-battery evil-visualstar evil-tutor evil-numbers evil-nerd-commenter evil-lisp-state evil-indent-plus evil-escape evil-args evil-anzu eval-sexp-fu espresso-theme elisp-slime-nav django-theme diminish define-word darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-statistics colorsarenice-theme color-theme-sanityinc-solarized clues-theme clean-aindent-mode cl-generic chruby cherry-blossom-theme busybee-theme buffer-move bubbleberry-theme bracketed-paste birds-of-paradise-plus-theme bind-key auto-highlight-symbol async ample-zen-theme alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ac-ispell)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
@@ -348,3 +348,69 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(compilation-message-face (quote default))
+ '(cua-global-mark-cursor-color "#2aa198")
+ '(cua-normal-cursor-color "#839496")
+ '(cua-overwrite-cursor-color "#b58900")
+ '(cua-read-only-cursor-color "#859900")
+ '(evil-want-Y-yank-to-eol t)
+ '(fill-column 100)
+ '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
+ '(highlight-symbol-colors
+   (--map
+    (solarized-color-blend it "#002b36" 0.25)
+    (quote
+     ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
+ '(highlight-symbol-foreground-color "#93a1a1")
+ '(highlight-tail-colors
+   (quote
+    (("#073642" . 0)
+     ("#546E00" . 20)
+     ("#00736F" . 30)
+     ("#00629D" . 50)
+     ("#7B6000" . 60)
+     ("#8B2C02" . 70)
+     ("#93115C" . 85)
+     ("#073642" . 100))))
+ '(hl-bg-colors
+   (quote
+    ("#7B6000" "#8B2C02" "#990A1B" "#93115C" "#3F4D91" "#00629D" "#00736F" "#546E00")))
+ '(hl-fg-colors
+   (quote
+    ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
+ '(magit-diff-use-overlays nil)
+ '(nrepl-message-colors
+   (quote
+    ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+ '(package-selected-packages
+   (quote
+    (white-sand-theme symon string-inflection ruby-refactor rebecca-theme password-generator impatient-mode htmlize helm-purpose window-purpose imenu-list exotica-theme evil-lion editorconfig dante browse-at-remote winum web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode nix-mode magit-gh-pulls madhat2r-theme livid-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js-doc parent-mode helm-nixos-options helm-css-scss haml-mode gitignore-mode github-search github-clone github-browse-file fringe-helper git-gutter+ gist gh marshal logito pcache ht fuzzy pos-tip epl flx emmet-mode skewer-mode request-deferred deferred js2-mode simple-httpd company-web web-completion-data company-tern dash-functional tern company-nixos-options nixos-options coffee-mode uuidgen toc-org rake osx-dictionary org-plus-contrib org-bullets minitest link-hint intero hlint-refactor hindent hide-comnt helm-hoogle haskell-snippets git-link flycheck-haskell eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff dumb-jump f darkokai-theme company-ghci company-ghc ghc haskell-mode company-cabal column-enforce-mode cmm-mode pcre2el spinner autothemer inf-ruby highlight bind-map helm-cscope xcscope stickyfunc-enhance srefactor disaster company-c-headers cmake-mode clang-format zenburn-theme yaml-mode ws-butler window-numbering ujelly-theme tao-theme spacemacs-theme spaceline planet-theme persp-mode orgit organic-green-theme open-junk-file omtose-phellack-theme neotree naquadah-theme monokai-theme moe-theme markdown-toc markdown-mode majapahit-theme magit-gitflow leuven-theme indent-guide hl-todo help-fns+ helm-themes helm-projectile helm-make projectile helm-descbinds helm-c-yasnippet helm-ag gruvbox-theme grandshell-theme gotham-theme google-translate git-messenger expand-region exec-path-from-shell evil-surround evil-search-highlight-persist evil-mc evil-matchit evil-magit magit magit-popup evil-iedit-state iedit evil-exchange ensime sbt-mode scala-mode ein request websocket dracula-theme diff-hl darktooth-theme company-quickhelp color-theme-sanityinc-tomorrow bundler badwolf-theme auto-yasnippet yasnippet auto-compile apropospriate-theme anti-zenburn-theme ample-theme ace-link ace-jump-helm-line auto-complete avy anzu smartparens flycheck git-gutter git-commit with-editor company helm helm-core hydra dash quelpa package-build use-package which-key evil material-theme zonokai-theme zen-and-art-theme volatile-highlights vi-tilde-fringe undo-tree underwater-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme stekene-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smooth-scrolling smeargle seti-theme s rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reverse-theme reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters railscasts-theme purple-haze-theme professional-theme powerline popwin popup pkg-info phoenix-dark-pink-theme phoenix-dark-mono-theme pbcopy pastels-on-dark-theme paradox page-break-lines packed osx-trash oldlace-theme occidental-theme obsidian-theme noflet noctilux-theme niflheim-theme mustang-theme move-text monochrome-theme molokai-theme mmm-mode minimal-theme macrostep lush-theme lorem-ipsum linum-relative light-soap-theme launchctl jbeans-theme jazz-theme ir-black-theme inkpot-theme info+ ido-vertical-mode hungry-delete highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme helm-swoop helm-mode-manager helm-gitignore helm-flx helm-company hc-zenburn-theme gruber-darker-theme goto-chg golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-gutter-fringe git-gutter-fringe+ gh-md gandalf-theme flycheck-pos-tip flx-ido flatui-theme flatland-theme firebelly-theme fill-column-indicator farmhouse-theme fancy-battery evil-visualstar evil-tutor evil-numbers evil-nerd-commenter evil-lisp-state evil-indent-plus evil-escape evil-args evil-anzu eval-sexp-fu espresso-theme elisp-slime-nav django-theme diminish define-word darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-statistics colorsarenice-theme color-theme-sanityinc-solarized clues-theme clean-aindent-mode cl-generic chruby cherry-blossom-theme busybee-theme buffer-move bubbleberry-theme bracketed-paste birds-of-paradise-plus-theme bind-key auto-highlight-symbol async ample-zen-theme alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ac-ispell)))
+ '(pos-tip-background-color "#073642")
+ '(pos-tip-foreground-color "#93a1a1")
+ '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
+ '(term-default-bg-color "#002b36")
+ '(term-default-fg-color "#839496")
+ '(weechat-color-list
+   (quote
+    (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83")))
+ '(xterm-color-names
+   ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#eee8d5"])
+ '(xterm-color-names-bright
+   ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"]))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
