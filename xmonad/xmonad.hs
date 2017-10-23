@@ -9,8 +9,8 @@ import           XMonad.Actions.SpawnOn           (manageSpawn, spawnOn)
 import           XMonad.Hooks.EwmhDesktops        (ewmh)
 import           XMonad.Hooks.ManageDocks         (avoidStruts, docks,
                                                    manageDocks)
-import           XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
-import           XMonad.Layout.NoBorders (smartBorders)
+import           XMonad.Hooks.ManageHelpers       (doFullFloat, isFullscreen)
+import           XMonad.Layout.NoBorders          (smartBorders)
 import           XMonad.ManageHook                (className, composeAll,
                                                    doShift, (-->), (<+>), (=?))
 

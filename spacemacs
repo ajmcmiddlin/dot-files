@@ -26,6 +26,7 @@ values."
      ;; better-defaults
      ;; c-c++
      ;; cscope
+     csv
      emacs-lisp
      git
      github
@@ -47,6 +48,7 @@ values."
      ruby
      ;; scala
      semantic
+     sql
      syntax-checking
      themes-megapack
      version-control
