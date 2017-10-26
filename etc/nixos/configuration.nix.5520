@@ -131,10 +131,12 @@
   services.openssh.enable = true;
 
   # Handle lid close
-  services.logind.extraConfig = ''
-  HandleLidSwitch=suspend
-  HandlePowerKey=hibernate
-  '';
+  # THESE ARE APPARENTLY THE DEFAULTS
+  # services.logind.extraConfig = ''
+  #   HandleLidSwitch=suspend
+  #   HandlePowerKey=hibernate
+  #   HandleLidSwitchDocked=ignore
+  # '';
 
   # Enable upower service - used by taffybar's battery widget
   services.upower.enable = true;
@@ -200,5 +202,5 @@
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "17.03";
+  system.stateVersion = "17.09";
 }
