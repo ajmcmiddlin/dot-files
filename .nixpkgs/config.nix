@@ -53,8 +53,13 @@ in
     };
 
     my-games = buildEnv {
-      name = "my-games";
+      name = "games";
       paths = [ unstable.crawlTiles ];
+    };
+
+    my-dev-tools = buildEnv {
+      name = "dev-tools";
+      paths = [ patchelf binutils ];
     };
   };
 }
