@@ -39,6 +39,7 @@ in
         hlint
         hasktags
         hoogle
+        apply-refact
       ];
     };
 
