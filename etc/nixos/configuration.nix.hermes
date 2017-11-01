@@ -38,38 +38,57 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
-    arandr
-    cabal2nix
-    cabal-install
-    dmenu
-    emacs
-    firefox
-    git
-    gnupg
-    htop
-    keychain
-    maim
-    networkmanagerapplet
-    owncloud-client
-    pass
-    powertop
-    qtpass
-    rxvt_unicode-with-plugins
-    slop
-    haskellPackages.taffybar
-    thunderbird
-    udisks2
-    vim
-    wget 
-    xorg.xbacklight
-    xscreensaver
+  environment = {
+    systemPackages = with pkgs; [
+      arandr
+      cabal2nix
+      cabal-install
+      chromium
+      cifs-utils
+      dmenu
+      emacs
+      exfat
+      firefom
+      ghc
+      git
+      gnupg
+      htop
+      keychain
+      maim
+      networkmanagerapplet
+      nix-prefetch-scripts
+      nix-repl
+      owncloud-client
+      pass
+      powertop
+      qtpass
+      rxvt_unicode-with-plugins
+      samba
+      silver-searcher
+      slop
+      haskellPackages.taffybar
+      thunderbird
+      tigervnc
+      udisks2
+      vim
+      wget
+      xorg.xbacklight
+      xclip
+      xscreensaver
+      vlc
 
-    # For clipboard syncing
-    xsel
-    parcellite
-    xdotool
-  ];
+      # Thunar
+      xfce.thunar
+
+      # PDF viewer with Vim bindings
+      zathura
+
+      # For clipboard syncing
+      xsel
+      parcellite
+      xdotool
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -81,7 +100,6 @@
 
   # Handle lid close
   services.logind.extraConfig = ''
-  HandleLidSwitch=suspend
   HandlePowerKey=hibernate
   '';
 
