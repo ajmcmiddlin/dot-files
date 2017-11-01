@@ -12,6 +12,10 @@ URxvt.keysym.C-underscore: font-size:decglobal
 ! Needed to make Solarized work
 URxvt.intensityStyles: false
 
+! Fake transparency
+*transparent: true
+*shading: 20
+
 ! Make the PRIMARY selection copy to CLIPBOARD
 ! URxvt.perl-ext-common: selection-to-clipboard,clipboard
 
@@ -29,7 +33,7 @@ URxvt.clipboard.pastecmd: xsel -ob
 !! COLOURS
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-https://github.com/solarized/xresources/blob/master/Xresources.dark
+! https://github.com/solarized/xresources/blob/master/Xresources.dark
 
 #define S_base03        #002b36
 #define S_base02        #073642
