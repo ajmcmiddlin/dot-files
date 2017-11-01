@@ -276,6 +276,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
    (add-hook 'haskell-mode-hook 'dante-mode)
+   (add-hook 'dante-mode-hook
+     '(lambda ()
+       (flycheck-add-next-checker 'haskell-dante
+                                  '(warning . haskell-hlint))))
   ;; (add-to-list 'exec-path "~/.local/bin/")
   )
 
