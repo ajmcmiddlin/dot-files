@@ -57,5 +57,21 @@ in
       name = "my-games";
       paths = [ unstable.crawlTiles ];
     };
+
+    my-data-tools = buildEnv {
+      name = "my-data-tools";
+      paths = [
+        qgis
+        mdbtools
+      ];
+    };
+
+    my-keyboard-tools = {
+      name = "keyboard-tools";
+      paths = [
+        dfu-util
+      ];
+    };
+
   };
 }
