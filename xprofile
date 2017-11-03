@@ -11,19 +11,9 @@ eval $(keychain --clear --noask --agents ssh --eval)
 taffybar &
 nm-applet &
 owncloud &
-emacs &
-chromium &
-thunderbird &
 qtpass &
 # Signal
 chromium --app-id=bikioccmkafdpakkkcpdbppfkghcmihk &
 parcellite &
 xscreensaver --no-splash &
 feh --bg-fill ~/wallpapers/current
-
-num_monitors=$(xrandr --listactivemonitors | head -n 1 | cut -d' ' -f 2)
-if (( num_monitors = 2 )); then
-    ~/.screenlayout/the-fort.sh
-else
-    ~/.screenlayout/laptop-only.sh
-fi
