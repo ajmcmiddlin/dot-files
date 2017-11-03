@@ -18,10 +18,12 @@ let
   unstable = import <unstable> {};
 in
 {
+  # For steam
+  allowUnfree = true;
   packageOverrides = super: let self = super.pkgs; in with self; rec {
 
     ## My one-shot install environment.
-    meta-env = buildEnv {
+    my-meta-env = buildEnv {
       name = "meta-env";
       paths = [
         haskell-env
@@ -41,7 +43,7 @@ in
       ];
     };
 
-    python-data-science-env = buildEnv {
+    my-python-data-science-env = buildEnv {
       name = "python-data-science-env";
       paths = with pkgs.python3.pkgs; [
         jupyter
@@ -54,8 +56,15 @@ in
     };
 
     my-games = buildEnv {
-      name = "my-games";
-      paths = [ unstable.crawlTiles ];
+      name = "games";
+      paths = [ unstable.crawlTiles
+                steam
+              ];
+    };
+
+    my-dev-tools = buildEnv {
+      name = "dev-tools";
+      paths = [ patchelf binutils ];
     };
 
     my-data-tools = buildEnv {
