@@ -75,7 +75,7 @@ in
       ];
     };
 
-    my-keyboard-tools = {
+    my-keyboard-tools = buildEnv {
       name = "keyboard-tools";
       paths = [
         dfu-util
