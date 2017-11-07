@@ -4,17 +4,34 @@ import           Data.Monoid                      ((<>))
 import qualified Graphics.X11.Types               as XT
 import           XMonad                           (Layout, ManageHook, X,
                                                    XConfig (..), def, spawn,
-                                                   windows, xmonad, (.|.))
+                                                   windows, xmonad, (.|.), (|||), Window)
 import           XMonad.Actions.SpawnOn           (manageSpawn, spawnOn)
 import           XMonad.Hooks.EwmhDesktops        (ewmh)
 import           XMonad.Hooks.ManageDocks         (avoidStruts, docks,
                                                    manageDocks)
 import           XMonad.Hooks.ManageHelpers       (doFullFloat, isFullscreen)
+--import           XMonad.Layout          ((|||), Layout)
 import           XMonad.Layout.NoBorders          (smartBorders)
+import           XMonad.Layout.ThreeColumns       (ThreeCol (ThreeCol, ThreeColMid))
 import           XMonad.ManageHook                (className, composeAll,
                                                    doShift, (-->), (<+>), (=?))
 
 import           System.Taffybar.Hooks.PagerHints (pagerHints)
+
+-- docks: add dock (panel) functionality to your configuration
+-- ewmh: https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints - lets XMonad talk to panels
+-- pagerHints: add support for Taffybar's current layout and workspaces hints
+main :: IO ()
+main = xmonad . docks . ewmh . pagerHints $ def
+  {
+   keys = myKeys
+  , layoutHook = myLayoutHook
+    -- let XMonad manage docks (taffybar)
+  , manageHook = myManageHook <+> manageDocks <+> manageHook def
+  , terminal = "urxvt"
+  , workspaces = myWorkspaces
+  , borderWidth = 3
+  }
 
 myKeys :: XConfig Layout -> M.Map (XT.ButtonMask, XT.KeySym) (X ())
 myKeys conf@(XConfig {modMask = modm}) =
@@ -62,18 +79,5 @@ myManageHook =
              , (isFullscreen --> doFullFloat)
              ]
 
--- docks: add dock (panel) functionality to your configuration
--- ewmh: https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints - lets XMonad talk to panels
--- pagerHints: add support for Taffybar's current layout and workspaces hints
-main :: IO ()
-main = xmonad . docks . ewmh . pagerHints $ def
-  {
-   keys = myKeys
-    -- avoidStruts tells windows to avoid the "strut" where docks live
-  , layoutHook = smartBorders $ avoidStruts $ layoutHook def
-    -- let XMonad manage docks (taffybar)
-  , manageHook = myManageHook <+> manageDocks <+> manageHook def
-  , terminal = "urxvt"
-  , workspaces = myWorkspaces
-  , borderWidth = 3
-  }
+-- avoidStruts tells windows to avoid the "strut" where docks live
+myLayoutHook = smartBorders $ avoidStruts $ ThreeColMid 1 (3/100) (1/2) ||| layoutHook def
