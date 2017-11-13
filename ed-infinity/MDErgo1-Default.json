@@ -507,8 +507,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LCTRL",
-                    "label": "LCTRL"
+                    "key": "RIGHT",
+                    "label": "\u2192"
                 }
             }
         },
@@ -783,6 +783,10 @@
                     "key": "P",
                     "label": "P"
                 },
+                "1": {
+                    "key": "PRINTSCREEN",
+                    "label": "PRSC"
+                },
                 "2": {
                     "key": "P+",
                     "label": "P+"
@@ -892,6 +896,10 @@
                 "0": {
                     "key": "SEMICOLON",
                     "label": ";"
+                },
+                "1": {
+                    "key": "INSERT",
+                    "label": "INS"
                 },
                 "2": {
                     "key": "P+",
@@ -1113,8 +1121,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "RCTRL",
-                    "label": "RCTRL"
+                    "key": "LEFT",
+                    "label": "\u2190"
                 }
             }
         },
