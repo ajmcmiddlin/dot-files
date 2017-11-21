@@ -15,5 +15,5 @@ qtpass &
 # Signal
 chromium --app-id=bikioccmkafdpakkkcpdbppfkghcmihk &
 parcellite &
-xscreensaver --no-splash &
+xscreensaver -no-splash &
 feh --bg-fill ~/wallpapers/current
