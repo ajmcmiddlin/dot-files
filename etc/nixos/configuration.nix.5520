@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./shares.nix
     ];
 
   nix.binaryCaches = [
@@ -32,6 +33,11 @@
       preLVM = true;
     }
   ];
+
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
 
   networking.hostName = "stevie"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
