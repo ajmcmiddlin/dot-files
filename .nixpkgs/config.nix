@@ -82,5 +82,12 @@ in
       ];
     };
 
+    my-music = buildEnv {
+      name = "music";
+      paths = [
+        spotify
+      ];
+    };
+
   };
 }
