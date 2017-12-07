@@ -6,7 +6,7 @@ import           XMonad                           (Layout, ManageHook, X,
                                                    XConfig (..), def, spawn,
                                                    windows, xmonad, (.|.), (|||), Window)
 import           XMonad.Actions.SpawnOn           (manageSpawn, spawnOn)
-import           XMonad.Hooks.EwmhDesktops        (ewmh)
+import           XMonad.Hooks.EwmhDesktops        (ewmh, fullscreenEventHook)
 import           XMonad.Hooks.ManageDocks         (avoidStruts, docks,
                                                    manageDocks)
 import           XMonad.Hooks.ManageHelpers       (doFullFloat, isFullscreen)
@@ -24,13 +24,14 @@ import           System.Taffybar.Hooks.PagerHints (pagerHints)
 main :: IO ()
 main = xmonad . docks . ewmh . pagerHints $ def
   {
-   keys = myKeys
+    borderWidth = 3
+  , handleEventHook = handleEventHook def <+> fullscreenEventHook
+  , keys = myKeys
   , layoutHook = myLayoutHook
     -- let XMonad manage docks (taffybar)
   , manageHook = myManageHook <+> manageDocks <+> manageHook def
   , terminal = "urxvt"
   , workspaces = myWorkspaces
-  , borderWidth = 3
   }
 
 myKeys :: XConfig Layout -> M.Map (XT.ButtonMask, XT.KeySym) (X ())
@@ -51,6 +52,7 @@ myKeys conf@(XConfig {modMask = modm}) =
                    , ((0, xK_X86AudioMute), spawn "amixer sset Master toggle")
                    , ((XT.controlMask .|. XT.mod1Mask, XT.xK_q), spawn "~/.screenlayout/laptop-only.sh")
                    , ((XT.controlMask .|. XT.mod1Mask, XT.xK_w), spawn "~/.screenlayout/the-fort.sh")
+                   , ((XT.controlMask .|. XT.mod1Mask, XT.xK_e), spawn "~/.screenlayout/home-office.sh")
                    , ((modm .|. XT.shiftMask, XT.xK_p), spawn "passmenu")
                    ]
   in kees <> keys def conf
