@@ -6,7 +6,7 @@ import           XMonad                           (Layout, ManageHook, X,
                                                    XConfig (..), def, spawn,
                                                    windows, xmonad, (.|.), (|||), Window)
 import           XMonad.Actions.SpawnOn           (manageSpawn, spawnOn)
-import           XMonad.Hooks.EwmhDesktops        (ewmh)
+import           XMonad.Hooks.EwmhDesktops        (ewmh, fullscreenEventHook)
 import           XMonad.Hooks.ManageDocks         (avoidStruts, docks,
                                                    manageDocks)
 import           XMonad.Hooks.ManageHelpers       (doFullFloat, isFullscreen)
@@ -24,13 +24,14 @@ import           System.Taffybar.Hooks.PagerHints (pagerHints)
 main :: IO ()
 main = xmonad . docks . ewmh . pagerHints $ def
   {
-   keys = myKeys
+    borderWidth = 3
+  , handleEventHook = handleEventHook def <+> fullscreenEventHook
+  , keys = myKeys
   , layoutHook = myLayoutHook
     -- let XMonad manage docks (taffybar)
   , manageHook = myManageHook <+> manageDocks <+> manageHook def
   , terminal = "urxvt"
   , workspaces = myWorkspaces
-  , borderWidth = 3
   }
 
 myKeys :: XConfig Layout -> M.Map (XT.ButtonMask, XT.KeySym) (X ())
