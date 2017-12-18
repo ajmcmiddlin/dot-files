@@ -89,5 +89,12 @@ in
       ];
     };
 
+    my-bluetooth = buildEnv {
+      name = "bluetooth";
+      paths = [
+        blueman
+      ];
+    };
+
   };
 }

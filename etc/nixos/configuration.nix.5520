@@ -39,6 +39,15 @@
     driSupport32Bit = true;
   };
 
+  hardware.bluetooth.enable = true;
+  hardware.pulseaudio = {
+    enable = true;
+
+    # Get a lightweight package by default. Need full to support BT audio.
+    package = pkgs.pulseaudioFull;
+  };
+
+
   networking.hostName = "stevie"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
