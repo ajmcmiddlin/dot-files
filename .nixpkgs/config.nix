@@ -82,10 +82,14 @@ in
       ];
     };
 
-    my-music = buildEnv {
-      name = "music";
+    my-media = buildEnv {
+      name = "media";
       paths = [
+        # Pulse audio control
+        # pavucontrol
+
         spotify
+        vlc
       ];
     };
 
