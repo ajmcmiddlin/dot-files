@@ -209,7 +209,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.extraUsers.andrew = {
     createHome = true;
-    extraGroups = ["wheel" "networkmanager"];
+    extraGroups = ["wheel" "video" "audio" "disk" "networkmanager"];
     group = "users";
     home = "/home/andrew";
     isNormalUser = true;
