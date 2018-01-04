@@ -100,12 +100,5 @@ in
       ];
     };
 
-    my-audio = buildEnv {
-      name = "audio";
-      paths = [
-        pavucontrol
-      ];
-    };
-
   };
 }
