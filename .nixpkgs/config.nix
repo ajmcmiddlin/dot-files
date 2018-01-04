@@ -57,14 +57,19 @@ in
 
     my-games = buildEnv {
       name = "games";
-      paths = [ unstable.crawlTiles
-                steam
-              ];
+      paths = [
+        unstable.crawlTiles
+        steam
+      ];
     };
 
     my-dev-tools = buildEnv {
       name = "dev-tools";
-      paths = [ patchelf binutils ];
+      paths = [
+        patchelf
+        binutils
+        vscode
+      ];
     };
 
     my-data-tools = buildEnv {
