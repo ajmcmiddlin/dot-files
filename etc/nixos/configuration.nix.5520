@@ -40,12 +40,11 @@
   };
 
   hardware.bluetooth.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-
-    # Get a lightweight package by default. Need full to support BT audio.
-    package = pkgs.pulseaudioFull;
-  };
+  # hardware.pulseaudio = {
+  #   enable = true;
+  #   # Get a lightweight package by default. Need full to support BT audio.
+  #   package = pkgs.pulseaudioFull;
+  # };
 
 
   networking.hostName = "stevie"; # Define your hostname.
@@ -136,6 +135,8 @@
     hasktags
     hoogle
   ]);
+
+  programs.bash.enableCompletion = true;
 
   # Enable virtualisation - otherwise get missing vboxdrv error
   virtualisation.virtualbox.host.enable = true;
