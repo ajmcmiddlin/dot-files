@@ -34,12 +34,36 @@ in
     my-haskell-env = buildEnv {
       name = "haskell-env";
       paths = with pkgs.haskellPackages; [
-        ghcid
-        stylish-haskell
-        hlint
-        hasktags
-        hoogle
         apply-refact
+        cabal2nix
+        cabal-install
+        ghcid
+        hasktags
+        hlint
+        hoogle
+        stylish-haskell
+      ];
+    };
+
+    my-essentials = buildEnv {
+      name = "essentials";
+      paths = [
+        encfs
+        evince
+        exfat
+        firefox
+        keepassx
+        keychain
+        maim
+        pass
+        qtpass
+        slop
+        thunderbird
+
+        # For clipboard syncing
+        xsel
+        parcellite
+        xdotool
       ];
     };
 
@@ -66,8 +90,13 @@ in
     my-dev-tools = buildEnv {
       name = "dev-tools";
       paths = [
-        patchelf
+        ansible
         binutils
+        emacs
+        patchelf
+        silver-searcher
+        sqlite
+        vagrant
         vscode
       ];
     };
