@@ -82,4 +82,4 @@ myManageHook =
              ]
 
 -- avoidStruts tells windows to avoid the "strut" where docks live
-myLayoutHook = smartBorders $ avoidStruts $ ThreeColMid 1 (3/100) (1/2) ||| layoutHook def
+myLayoutHook = smartBorders $ avoidStruts $ layoutHook def ||| ThreeColMid 1 (3/100) (1/2)
