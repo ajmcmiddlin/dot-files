@@ -22,11 +22,19 @@ in
   allowUnfree = true;
   packageOverrides = super: let self = super.pkgs; in with self; rec {
 
+    ######################################################
+    # Install these with `nix-env -iA nixos.my-essentials`
+    ######################################################
+
     ## My one-shot install environment.
     my-meta-env = buildEnv {
       name = "meta-env";
       paths = [
-        haskell-env
+        my-dev-tools
+        my-essentials
+        my-games
+        my-haskell-env
+        my-media
       ];
     };
 
@@ -37,6 +45,7 @@ in
         apply-refact
         cabal2nix
         cabal-install
+        ghc
         ghcid
         hasktags
         hlint
@@ -48,17 +57,32 @@ in
     my-essentials = buildEnv {
       name = "essentials";
       paths = [
+        arandr
+        cifs-utils
+        dmenu
+        emacs
         encfs
         evince
         exfat
         firefox
+        gnupg
+        htop
         keepassx
         keychain
         maim
+        networkmanagerapplet
+        nix-repl
         pass
         qtpass
+        rxvt_unicode-with-plugins
         slop
         thunderbird
+        udisks2
+        unzip
+        upower
+        wget
+        which
+        xscreensaver
 
         # For clipboard syncing
         xsel
@@ -92,7 +116,7 @@ in
       paths = [
         ansible
         binutils
-        emacs
+        git
         patchelf
         silver-searcher
         sqlite

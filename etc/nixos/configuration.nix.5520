@@ -64,76 +64,28 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = (with pkgs; [
-    ansible
-    arandr
-    cabal2nix
-    cabal-install
     calibre
     chromium
-    cifs-utils
-    dmenu
-    emacs
-    encfs
-    evince
-    exfat
-    firefox
-    ghc
-    git
     gnumake
-    gnupg
-    htop
     inkscape
-    keepassx
-    keepassx2
-    keychain
     libreoffice
-    maim
-    networkmanagerapplet
     nix-prefetch-scripts
-    nix-repl
     octave
     openarena
     openconnect
     openconnect_openssl
     owncloud-client
-    pass
     powertop
-    qtpass
-    rxvt_unicode-with-plugins
-    silver-searcher
-    slop
-    sqlite
-    thunderbird
     tigervnc
     xfce.thunar
     xfce.xfce4icontheme
     xfce.xfce4settings
-    udisks2
-    unzip
-    upower
-    vagrant
     vim
     virtualbox
-    wget
-    which
     xorg.xbacklight
     xclip
     xorg.xev
-    xscreensaver
     zeal
-
-    # For clipboard syncing
-    xsel
-    parcellite
-    xdotool
-  ]) ++
-  (with pkgs.haskellPackages; [
-    stylish-haskell
-    taffybar
-    # apply-refact
-    hlint
-    hasktags
-    hoogle
   ]);
 
   programs.bash.enableCompletion = true;
