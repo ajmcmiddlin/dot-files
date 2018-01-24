@@ -37,6 +37,7 @@ in
         apply-refact
         cabal2nix
         cabal-install
+        ghc
         ghcid
         hasktags
         hlint
@@ -48,22 +49,51 @@ in
     my-essentials = buildEnv {
       name = "essentials";
       paths = [
+        arandr
+        chromium
+        cifs-utils
+        dmenu
+        emacs
         encfs
         evince
         exfat
         firefox
+        gnupg
+        htop
         keepassx
         keychain
         maim
+        networkmanagerapplet
+        nix-prefetch-scripts
+        nix-repl
+        owncloud-client
         pass
         qtpass
+        rxvt_unicode-with-plugins
+        samba
+        silver-searcher
         slop
+        haskellPackages.taffybar
         thunderbird
+        udisks2
+        unzip
+        vim
+        wget
+        xclip
+        xscreensaver
 
         # For clipboard syncing
         xsel
         parcellite
         xdotool
+      ];
+    };
+
+    my-laptop-tools = bulidEnv {
+      name = "laptop-tools";
+      paths = [
+        powertop
+        xorg.xbacklight
       ];
     };
 
@@ -93,6 +123,7 @@ in
         ansible
         binutils
         emacs
+        git
         patchelf
         silver-searcher
         sqlite
@@ -122,6 +153,7 @@ in
         # Pulse audio control
         # pavucontrol
 
+        ffmpeg
         spotify
         vlc
       ];
