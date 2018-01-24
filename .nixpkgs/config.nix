@@ -26,7 +26,11 @@ in
     my-meta-env = buildEnv {
       name = "meta-env";
       paths = [
-        haskell-env
+        my-dev-tools
+        my-essentials
+        my-haskell-env
+        my-laptop-tools
+        my-media
       ];
     };
 
@@ -89,7 +93,7 @@ in
       ];
     };
 
-    my-laptop-tools = bulidEnv {
+    my-laptop-tools = buildEnv {
       name = "laptop-tools";
       paths = [
         powertop
