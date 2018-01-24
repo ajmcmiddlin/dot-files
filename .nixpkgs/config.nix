@@ -22,6 +22,10 @@ in
   allowUnfree = true;
   packageOverrides = super: let self = super.pkgs; in with self; rec {
 
+    ######################################################
+    # Install these with `nix-env -iA nixos.my-essentials`
+    ######################################################
+
     ## My one-shot install environment.
     my-meta-env = buildEnv {
       name = "meta-env";
@@ -57,7 +61,6 @@ in
         chromium
         cifs-utils
         dmenu
-        emacs
         encfs
         evince
         exfat
@@ -83,6 +86,7 @@ in
         unzip
         vim
         wget
+        which
         xclip
         xscreensaver
 
@@ -97,6 +101,7 @@ in
       name = "laptop-tools";
       paths = [
         powertop
+        upower
         xorg.xbacklight
       ];
     };
