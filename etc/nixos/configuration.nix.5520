@@ -76,6 +76,7 @@
     openconnect_openssl
     owncloud-client
     powertop
+    haskellPackages.taffybar
     tigervnc
     xfce.thunar
     xfce.xfce4icontheme
