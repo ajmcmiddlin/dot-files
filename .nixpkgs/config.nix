@@ -32,8 +32,8 @@ in
       paths = [
         my-dev-tools
         my-essentials
-        my-games
         my-haskell-env
+        my-laptop-tools
         my-media
       ];
     };
@@ -59,9 +59,9 @@ in
       name = "essentials";
       paths = [
         arandr
+        chromium
         cifs-utils
         dmenu
-        emacs
         encfs
         evince
         exfat
@@ -72,23 +72,38 @@ in
         keychain
         maim
         networkmanagerapplet
+        nix-prefetch-scripts
         nix-repl
+        owncloud-client
         pass
         qtpass
         rxvt_unicode-with-plugins
+        samba
+        silver-searcher
         slop
+        haskellPackages.taffybar
         thunderbird
         udisks2
         unzip
-        upower
+        vim
         wget
         which
+        xclip
         xscreensaver
 
         # For clipboard syncing
         xsel
         parcellite
         xdotool
+      ];
+    };
+
+    my-laptop-tools = buildEnv {
+      name = "laptop-tools";
+      paths = [
+        powertop
+        upower
+        xorg.xbacklight
       ];
     };
 
@@ -117,6 +132,7 @@ in
       paths = [
         ansible
         binutils
+        emacs
         git
         patchelf
         silver-searcher
@@ -147,6 +163,7 @@ in
         # Pulse audio control
         # pavucontrol
 
+        ffmpeg
         spotify
         vlc
       ];
