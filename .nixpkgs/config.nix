@@ -77,8 +77,8 @@ in
         networkmanagerapplet
         nix-prefetch-scripts
         nix-repl
-        openconnect
-        openconnect_openssl
+        # openconnect
+        # openconnect_openssl
         owncloud-client
         pass
         qtpass
@@ -138,6 +138,7 @@ in
       paths = [
         ansible
         binutils
+        docker_compose
         emacs
         git
         gnumake
