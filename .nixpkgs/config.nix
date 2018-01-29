@@ -59,6 +59,7 @@ in
       name = "essentials";
       paths = [
         arandr
+        calibre
         chromium
         cifs-utils
         dmenu
@@ -68,12 +69,16 @@ in
         firefox
         gnupg
         htop
+        inkscape
         keepassx
         keychain
+        libreoffice
         maim
         networkmanagerapplet
         nix-prefetch-scripts
         nix-repl
+        openconnect
+        openconnect_openssl
         owncloud-client
         pass
         qtpass
@@ -123,6 +128,7 @@ in
       name = "games";
       paths = [
         unstable.crawlTiles
+        openarena
         steam
       ];
     };
@@ -134,10 +140,12 @@ in
         binutils
         emacs
         git
+        gnumake
         patchelf
         silver-searcher
         sqlite
         vagrant
+        virtualbox
         vscode
       ];
     };

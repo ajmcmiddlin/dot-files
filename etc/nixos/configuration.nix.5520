@@ -61,33 +61,11 @@
   # Set your time zone.
   time.timeZone = "Australia/Brisbane";
 
+  # SEE .nixpkgs/config.nix for installed packages
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = (with pkgs; [
-    calibre
-    chromium
-    gnumake
-    inkscape
-    libreoffice
-    nix-prefetch-scripts
-    octave
-    openarena
-    openconnect
-    openconnect_openssl
-    owncloud-client
-    powertop
-    haskellPackages.taffybar
-    tigervnc
-    xfce.thunar
-    xfce.xfce4icontheme
-    xfce.xfce4settings
-    vim
-    virtualbox
-    xorg.xbacklight
-    xclip
-    xorg.xev
-    zeal
-  ]);
+  # environment.systemPackages = (with pkgs; [
+  # ]);
 
   programs.bash.enableCompletion = true;
 
