@@ -51,6 +51,7 @@ in
         hlint
         hoogle
         stylish-haskell
+        stack
       ];
     };
 
