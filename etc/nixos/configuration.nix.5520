@@ -93,6 +93,7 @@
 
   # Enable virtualisation - otherwise get missing vboxdrv error
   virtualisation.virtualbox.host.enable = true;
+  virtualisation.docker.enable = true;
 
   # List services that you want to enable:
 
@@ -163,7 +164,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.extraUsers.andrew = {
     createHome = true;
-    extraGroups = ["wheel" "video" "audio" "disk" "networkmanager"];
+    extraGroups = ["wheel" "video" "audio" "disk" "networkmanager" "docker"];
     group = "users";
     home = "/home/andrew";
     isNormalUser = true;
