@@ -71,6 +71,7 @@ in
         evince
         exfat
         firefox
+        gimp
         gnupg
         htop
         inkscape
