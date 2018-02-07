@@ -20,6 +20,10 @@ in
 {
   # For steam
   allowUnfree = true;
+
+  # Might need to get Netflix working
+  # pkgs.config.chromium = { enableWideVine = true; };
+
   packageOverrides = super: let self = super.pkgs; in with self; rec {
 
     ######################################################
@@ -67,6 +71,7 @@ in
         evince
         exfat
         firefox
+        gimp
         gnupg
         htop
         inkscape
