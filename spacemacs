@@ -277,9 +277,19 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
    (add-hook 'haskell-mode-hook 'dante-mode)
    (add-hook 'dante-mode-hook
-     '(lambda ()
-       (flycheck-add-next-checker 'haskell-dante
-                                  '(warning . haskell-hlint))))
+             '(lambda ()
+                (flycheck-add-next-checker 'haskell-dante
+                                           '(warning . haskell-hlint))
+                (add-to-list 'flycheck-disabled-checkers 'haskell-stack-ghc)))
+   (setq dante-repl-command-line-methods-alist
+         `((styx  . ,(lambda (root) (dante-repl-by-file root '("styx.yaml") '("styx" "repl" dante-target))))
+           (nix   . ,(lambda (root) (dante-repl-by-file root '("shell.nix" "default.nix")
+                                                        '("nix-shell" "--run" (concat "cabal new-repl " (or dante-target "") " --builddir=dist/dante")))))
+           (stack . ,(lambda (root) (dante-repl-by-file root '("stack.yaml") '("stack" "repl" dante-target))))
+           (mafia . ,(lambda (root) (dante-repl-by-file root '("mafia") '("mafia" "repl" dante-target))))
+           (new-build . ,(lambda (root) (when (or (directory-files root nil ".*\\.cabal$") (file-exists-p "cabal.project"))
+                                          '("cabal" "new-repl" dante-target "--builddir=dist/dante"))))
+           (bare . ,(lambda (_) '("cabal" "repl" dante-target "--builddir=dist/dante")))))
   ;; (add-to-list 'exec-path "~/.local/bin/")
   )
 
