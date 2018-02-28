@@ -13,7 +13,7 @@ import           XMonad.Hooks.ManageHelpers       (doFullFloat, isFullscreen)
 --import           XMonad.Layout          ((|||), Layout)
 import           XMonad.Layout.NoBorders          (smartBorders)
 import           XMonad.Layout.ThreeColumns       (ThreeCol (ThreeCol, ThreeColMid))
-import           XMonad.ManageHook                (className, composeAll,
+import           XMonad.ManageHook                (appName, className, composeAll,
                                                    doShift, (-->), (<+>), (=?))
 
 import           System.Taffybar.Hooks.PagerHints (pagerHints)
@@ -76,7 +76,7 @@ myManageHook =
   composeAll [ className =? "Emacs" --> doShift "2:Work"
              , className =? "Thunderbird" --> doShift "8:Mail"
              -- Below is the class name for Signal (launched via Chrome)
-             , className =? "crx_bikioccmkafdpakkkcpdbppfkghcmihk" --> doShift "9:Chat"
+             , appName =? "Signal" --> doShift "9:Chat"
              , className =? "QtPass" --> doShift "7:Pass"
              , className =? "Spotify" --> doShift "4:Music"
              , className =? "Firefox" --> doShift "1:Web"
