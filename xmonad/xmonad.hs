@@ -79,7 +79,6 @@ myManageHook =
              , appName =? "Signal" --> doShift "9:Chat"
              , className =? "QtPass" --> doShift "7:Pass"
              , className =? "Spotify" --> doShift "4:Music"
-             , className =? "Firefox" --> doShift "1:Web"
              , (isFullscreen --> doFullFloat)
              ]
 
