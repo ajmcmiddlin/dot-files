@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+script_dir="$(dirname $0)"
+temp_pg_dir="${script_dir}/.temp-pg"
+data_dir="${temp_pg_dir}/PGDATA"
+log="${temp_pg_dir}/log"
+lock_file="${temp_pg_dir}/lock"
+
+function die() {
+  echo "Must provide 'start' or 'stop' as argument"
+  exit 1
+}
+
+function die_lock() {
+  echo "Postgres already running"
+  exit 2
+}
+
+(( $# < 1 )) && die
+
+case $1 in
+  start)
+    [[ -e "$lock_file" ]] && die_lock
+
+    rm -rf "${data_dir}"
+    mkdir "${data_dir}"
+
+    rm -f "$log"
+
+    initdb -A trust -U postgres -D "$data_dir" -E UTF-8
+
+    # Taken from postgres-embedded haskell package
+    pg_ctl -w -D "$data_dir" -o "-F" -l "$log" start
+
+    touch "$lock_file"
+    ;;
+  stop)
+    pg_ctl -D "$data_dir" stop
+    rm -f "$lock_file"
+    ;;
+  *)
+    die
+    ;;
+esac
+
