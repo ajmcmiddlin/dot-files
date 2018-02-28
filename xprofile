@@ -17,4 +17,8 @@ chromium --app-id=bikioccmkafdpakkkcpdbppfkghcmihk &
 parcellite &
 xscreensaver -no-splash &
 feh --bg-fill ~/wallpapers/current
-blueman-applet &
+emacs &
+firefox &
+thunderbird &
+spotify &
+

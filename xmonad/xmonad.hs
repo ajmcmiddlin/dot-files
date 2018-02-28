@@ -62,7 +62,7 @@ myWorkspaces =
   [ "1:Web"
   , "2:Work"
   , "3:WorkBrowser"
-  , "4"
+  , "4:Music"
   , "5"
   , "6"
   , "7:Pass"
@@ -78,6 +78,8 @@ myManageHook =
              -- Below is the class name for Signal (launched via Chrome)
              , className =? "crx_bikioccmkafdpakkkcpdbppfkghcmihk" --> doShift "9:Chat"
              , className =? "QtPass" --> doShift "7:Pass"
+             , className =? "Spotify" --> doShift "4:Music"
+             , className =? "Firefox" --> doShift "1:Web"
              , (isFullscreen --> doFullFloat)
              ]
 
