@@ -150,7 +150,7 @@ in
         gnumake
         patchelf
         silver-searcher
-        sqlite
+        sqlite-interactive
         vagrant
         virtualbox
         vscode
