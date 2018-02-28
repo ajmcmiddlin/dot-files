@@ -87,6 +87,7 @@ in
         owncloud-client
         pass
         qtpass
+        redshift
         rxvt_unicode-with-plugins
         samba
         silver-searcher
