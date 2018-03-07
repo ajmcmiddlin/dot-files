@@ -79,6 +79,7 @@ in
         keychain
         libreoffice
         maim
+        gnome3.nautilus
         networkmanagerapplet
         nix-prefetch-scripts
         nix-repl
