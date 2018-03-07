@@ -150,6 +150,7 @@ in
         git
         gnumake
         patchelf
+        postgresql
         silver-searcher
         sqlite-interactive
         vagrant
