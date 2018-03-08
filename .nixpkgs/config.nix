@@ -79,6 +79,7 @@ in
         keychain
         libreoffice
         maim
+        gnome3.nautilus
         networkmanagerapplet
         nix-prefetch-scripts
         nix-repl
@@ -149,6 +150,7 @@ in
         git
         gnumake
         patchelf
+        postgresql
         silver-searcher
         sqlite-interactive
         vagrant
