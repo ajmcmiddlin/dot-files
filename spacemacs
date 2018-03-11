@@ -82,6 +82,8 @@ values."
 (setq-default dotspacemacs-configuration-layers
               '((haskell :variables haskell-enable-hindent-style "chris-done")))
 
+(setq-default dotspacemacs-mode-line-theme 'spacemacs)
+
 (defun dotspacemacs-configuration-layers ()
   '((ruby :variables ruby-version-manager 'rvm)))
 
