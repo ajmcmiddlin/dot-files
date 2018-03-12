@@ -64,6 +64,7 @@ in
       paths = [
         arandr
         aspell
+        aspellDicts.en
         calibre
         chromium
         cifs-utils
