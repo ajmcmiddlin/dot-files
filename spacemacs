@@ -45,7 +45,7 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
+     spell-checking
      ;; osx
      ruby
      ;; scala
@@ -81,6 +81,8 @@ values."
 
 (setq-default dotspacemacs-configuration-layers
               '((haskell :variables haskell-enable-hindent-style "chris-done")))
+
+(setq-default dotspacemacs-mode-line-theme 'spacemacs)
 
 (defun dotspacemacs-configuration-layers ()
   '((ruby :variables ruby-version-manager 'rvm)))

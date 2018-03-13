@@ -63,6 +63,7 @@ in
       name = "essentials";
       paths = [
         arandr
+        aspell
         calibre
         chromium
         cifs-utils

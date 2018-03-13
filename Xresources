@@ -8,7 +8,6 @@ URxvt.keysym.C-plus:       font-size:incglobal
 URxvt.keysym.C-minus:      font-size:decrease
 URxvt.keysym.C-underscore: font-size:decglobal
 
-
 ! Needed to make Solarized work
 URxvt.intensityStyles: false
 
