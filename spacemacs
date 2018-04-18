@@ -3,6 +3,7 @@
 ;; It must be stored in your home directory.
 
 ;; Updated bd0b4bae..fd905479 on 2018-02-26
+;; Updated fd905479..d4017b1c on 2018-04-18
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
@@ -45,11 +46,11 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     spell-checking
      ;; osx
      ruby
      ;; scala
      semantic
+     (spell-checking :variables spell-checking-enable-by-default nil)
      sql
      syntax-checking
      themes-megapack
@@ -277,25 +278,6 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-   (add-hook 'haskell-mode-hook 'dante-mode)
-   (add-hook 'dante-mode-hook
-             '(lambda ()
-                (flycheck-add-next-checker 'haskell-dante
-                                           '(warning . haskell-hlint))
-                (add-to-list 'flycheck-disabled-checkers 'haskell-stack-ghc)))
-   (setq dante-repl-command-line-methods-alist
-         `((styx  . ,(lambda (root) (dante-repl-by-file root '("styx.yaml") '("styx" "repl" dante-target))))
-           (nix   . ,(lambda (root)
-                       (dante-repl-by-file
-                         root
-                         '("shell.nix" "default.nix")
-                         '("nix-shell" "--run" (concat "cabal new-repl " (or dante-target "") "--builddir=dist/dante")))))
-           (stack . ,(lambda (root) (dante-repl-by-file root '("stack.yaml") '("stack" "repl" dante-target))))
-           (mafia . ,(lambda (root) (dante-repl-by-file root '("mafia") '("mafia" "repl" dante-target))))
-           (new-build . ,(lambda (root) (when (or (directory-files root nil ".*\\.cabal$") (file-exists-p "cabal.project"))
-                                          '("cabal" "new-repl" dante-target "--builddir=dist/dante"))))
-           (bare . ,(lambda (_) '("cabal" "repl" dante-target "--builddir=dist/dante")))))
   ;; (add-to-list 'exec-path "~/.local/bin/")
   )
 
@@ -306,6 +288,25 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (setq-default dotspacemacs-configuration-layers
-                '((spell-checking :variables spell-checking-enable-by-default nil)))
+  ;; Stop flycheck using stack.
+  (setq-default flycheck-haskell-runghc-command `(,(funcall flycheck-executable-find "runghc") "-i"))
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+  (add-hook 'haskell-mode-hook 'dante-mode)
+  (add-hook 'dante-mode-hook
+            '(lambda ()
+               (flycheck-add-next-checker 'haskell-dante
+                                          '(warning . haskell-hlint))
+               (add-to-list 'flycheck-disabled-checkers 'haskell-stack-ghc)))
+  (setq dante-repl-command-line-methods-alist
+        `((styx  . ,(lambda (root) (dante-repl-by-file root '("styx.yaml") '("styx" "repl" dante-target))))
+          (nix   . ,(lambda (root)
+                      (dante-repl-by-file
+                        root
+                        '("shell.nix" "default.nix")
+                        '("nix-shell" "--run" (concat "cabal new-repl " (or dante-target "") "--builddir=dist/dante")))))
+          (stack . ,(lambda (root) (dante-repl-by-file root '("stack.yaml") '("stack" "repl" dante-target))))
+          (mafia . ,(lambda (root) (dante-repl-by-file root '("mafia") '("mafia" "repl" dante-target))))
+          (new-build . ,(lambda (root) (when (or (directory-files root nil ".*\\.cabal$") (file-exists-p "cabal.project"))
+                                         '("cabal" "new-repl" dante-target "--builddir=dist/dante"))))
+          (bare . ,(lambda (_) '("cabal" "repl" dante-target "--builddir=dist/dante")))))
   )
