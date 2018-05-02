@@ -13,12 +13,16 @@
   nix.binaryCaches = [
     "https://nixcache.reflex-frp.org"
     "http://hydra.qfpl.io"
+    "https://cache.nixos.org"
   ];
 
+  # cache.nixos.org's key seems to be added for us
   nix.binaryCachePublicKeys = [
     "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
     "qfpl.io:xME0cdnyFcOlMD1nwmn6VrkkGgDNLLpMXoMYl58bz5g="
   ];
+
+  nix.buildCores = 2;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -35,6 +39,8 @@
       preLVM = true;
     }
   ];
+
+  sound.enable = true;
 
   hardware.opengl = {
     enable = true;
@@ -131,5 +137,5 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "17.09"; # Did you read the comment?
+  system.stateVersion = "18.03"; # Did you read the comment?
 }
