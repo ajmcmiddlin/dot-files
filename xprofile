@@ -2,6 +2,8 @@
 
 . ~/.profile
 
+export EDITOR=nvim
+
 # Start keychain and unlock our private key. Clear any previously loaded keys - i.e. assume login
 # is unauthorised until proven otherwise. Don't ask for passphrases yet - just set it up so that
 # when we add keys they're available to everyone. To add a key, do something like:
@@ -12,8 +14,7 @@ taffybar &
 nm-applet &
 owncloud &
 qtpass &
-# Signal
-chromium --app-id=bikioccmkafdpakkkcpdbppfkghcmihk &
+signal-desktop &
 parcellite &
 xscreensaver -no-splash &
 feh --bg-fill ~/wallpapers/current

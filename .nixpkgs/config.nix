@@ -93,13 +93,14 @@ in
         redshift
         rxvt_unicode-with-plugins
         samba
+        signal-desktop
         silver-searcher
         slop
         haskellPackages.taffybar
         thunderbird
         udisks2
         unzip
-        vim
+        neovim
         wget
         which
         xclip
