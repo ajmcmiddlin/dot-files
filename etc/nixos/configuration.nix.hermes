@@ -11,9 +11,9 @@
     ];
 
   nix.binaryCaches = [
+    "https://cache.nixos.org"
     "https://nixcache.reflex-frp.org"
     "http://hydra.qfpl.io"
-    "https://cache.nixos.org"
   ];
 
   # cache.nixos.org's key seems to be added for us
