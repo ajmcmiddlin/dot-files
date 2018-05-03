@@ -55,7 +55,6 @@ in
         hlint
         hoogle
         stylish-haskell
-        stack
       ];
     };
 
@@ -72,6 +71,7 @@ in
         encfs
         evince
         exfat
+        feh
         firefox
         gimp
         gnupg
