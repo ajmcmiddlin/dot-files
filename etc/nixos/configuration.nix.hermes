@@ -62,10 +62,13 @@
   # SEE ~/.nixpkgs/config.nix FOR PACKAGE SETS
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  # environment = {
-  #   systemPackages = with pkgs; [
-  #   ];
-  # };
+  environment = {
+    systemPackages = with pkgs; [
+      exfat
+      exfat-utils
+      fuse_exfat
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
