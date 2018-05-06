@@ -25,7 +25,8 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
+     (auto-completion
+       (haskell :variables haskell-completion-backend 'dante))
      ;; better-defaults
      ;; c-c++
      ;; cscope
@@ -33,7 +34,7 @@ values."
      emacs-lisp
      git
      github
-     haskell
+     (haskell :variables haskell-enable-hindent-style "chris-done")
      haskell-ajm
      html
      ipython-notebook
@@ -75,13 +76,6 @@ values."
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
    dotspacemacs-delete-orphan-packages t))
-
-(setq-default dotspacemacs-configuration-layers
-              '(auto-completion
-                (haskell :variables haskell-completion-backend 'dante)))
-
-(setq-default dotspacemacs-configuration-layers
-              '((haskell :variables haskell-enable-hindent-style "chris-done")))
 
 (setq-default dotspacemacs-mode-line-theme 'spacemacs)
 
@@ -303,7 +297,7 @@ you should place your code here."
                       (dante-repl-by-file
                         root
                         '("shell.nix" "default.nix")
-                        '("nix-shell" "--run" (concat "cabal new-repl " (or dante-target "") "--builddir=dist/dante")))))
+                        '("nix-shell" "--run" (concat "cabal new-repl " (or dante-target "") " --builddir=dist/dante")))))
           (stack . ,(lambda (root) (dante-repl-by-file root '("stack.yaml") '("stack" "repl" dante-target))))
           (mafia . ,(lambda (root) (dante-repl-by-file root '("mafia") '("mafia" "repl" dante-target))))
           (new-build . ,(lambda (root) (when (or (directory-files root nil ".*\\.cabal$") (file-exists-p "cabal.project"))
