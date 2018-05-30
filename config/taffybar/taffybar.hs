@@ -22,7 +22,7 @@ cpuCallback = do
   (userLoad, systemLoad, totalLoad) <- cpuLoad
   return [totalLoad, systemLoad]
 
-main = do
+main =
   let memCfg = defaultGraphConfig { graphDataColors = [(1, 0, 0, 1)]
                                   , graphLabel = Just "mem"
                                   }
@@ -31,7 +31,7 @@ main = do
                                                       ]
                                   , graphLabel = Just "cpu"
                                   }
-      clock = textClockNew Nothing "<span fgcolor='orange'>%a %b %_d %H:%M:%S</span>" 1
+      clock = textClockNew Nothing "<span fgcolor='white'>%a %d %b %Y %H:%M:%S UTC+10</span>" 1
       pager = taffyPagerNew defaultPagerConfig
       note = notifyAreaNew defaultNotificationConfig
       -- wea = weatherNew (defaultWeatherConfig "KMSN") 10
@@ -40,7 +40,9 @@ main = do
       cpu = pollingGraphNew cpuCfg 0.5 cpuCallback
       tray = systrayNew
       batt = batteryBarNew defaultBatteryConfig 60.0
-  defaultTaffybar defaultTaffybarConfig { barHeight = 20
-                                        , startWidgets = [ pager, note ]
-                                        , endWidgets = [ tray, batt, clock, mem, cpu ]
-                                        }
+  in
+    defaultTaffybar defaultTaffybarConfig { barHeight = 22
+                                          , widgetSpacing = 10
+                                          , startWidgets = [ pager, note ]
+                                          , endWidgets = [ clock, tray, batt, mem, cpu ]
+                                          }
