@@ -7,7 +7,7 @@ log="${temp_pg_dir}/log"
 lock_file="${temp_pg_dir}/lock"
 
 function die() {
-  echo "Must provide 'start' or 'stop' as argument"
+  echo "Must provide 'start', 'stop', 'init', or 'teardown' as command"
   exit 1
 }
 

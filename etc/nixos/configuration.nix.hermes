@@ -78,6 +78,9 @@
 
   # List services that you want to enable:
 
+  # Enable yubikey
+  services.pcscd.enable = true;
+
   # Handle lid close
   services.logind.extraConfig = ''
     HandlePowerKey=hibernate
