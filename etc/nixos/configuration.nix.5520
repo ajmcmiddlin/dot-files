@@ -80,6 +80,9 @@
 
   # List services that you want to enable:
 
+  # Enable yubikey
+  services.pcscd.enable = true;
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
