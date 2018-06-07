@@ -64,6 +64,7 @@ in
         arandr
         aspell
         aspellDicts.en
+        autossh
         calibre
         chromium
         cifs-utils
@@ -105,6 +106,7 @@ in
         which
         xclip
         xscreensaver
+        yubioath-desktop
 
         # For clipboard syncing
         xsel
