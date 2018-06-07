@@ -138,7 +138,7 @@ in
       name = "games";
       paths = [
         unstable.crawlTiles
-        openarena
+        # openarena
         steam
       ];
     };
