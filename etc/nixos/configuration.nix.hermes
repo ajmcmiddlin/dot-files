@@ -57,7 +57,7 @@
   # Set your time zone.
   time.timeZone = "Australia/Brisbane";
 
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
   # SEE ~/.nixpkgs/config.nix FOR PACKAGE SETS
   # List packages installed in system profile. To search by name, run:
@@ -90,8 +90,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 445 139 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -124,6 +124,36 @@
   # Enable upower service - used by taffybar's battery widget
   services.upower.enable = true;
   powerManagement.enable = true;
+
+  services.samba = {
+    enable = true;
+    securityType = "user";
+    extraConfig = ''
+      workgroup = WORKGROUP
+      server string = hermes
+      netbios name = hermes
+      #security = share
+      #use sendfile = yes
+      #max protocol = smb2
+      hosts allow = 192.168.1.0/24  localhost
+      hosts deny = 0.0.0.0/0
+      guest account = nobody
+      map to guest = bad user
+    '';
+    shares = {
+      andrew = {
+        path = "/home/andrew";
+        browseable = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "andrew";
+        "force group" = "users";
+        "valid users" = "andrew";
+      };
+    };
+  };
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
