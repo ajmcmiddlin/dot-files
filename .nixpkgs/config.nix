@@ -89,6 +89,7 @@ in
         # openconnect
         # openconnect_openssl
         owncloud-client
+        pandoc
         pass
         qtpass
         redshift
