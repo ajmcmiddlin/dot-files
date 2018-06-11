@@ -156,6 +156,7 @@ in
         emacs
         git
         gnumake
+        nixops
         patchelf
         postgresql
         silver-searcher

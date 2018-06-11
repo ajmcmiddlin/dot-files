@@ -57,6 +57,7 @@
   # Set your time zone.
   time.timeZone = "Australia/Brisbane";
 
+  virtualisation.virtualbox.host.enable = true;
   # virtualisation.docker.enable = true;
 
   # SEE ~/.nixpkgs/config.nix FOR PACKAGE SETS
@@ -165,7 +166,7 @@
       uid = 1000;
       createHome = true;
       group = "users";
-      extraGroups = ["wheel" "networkmanager" "docker" "audio" "video"];
+      extraGroups = ["wheel" "networkmanager" "docker" "audio" "video" "virtualbox"];
       home = "/home/andrew";
     };
 
