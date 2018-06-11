@@ -99,6 +99,7 @@ in
         slop
         haskellPackages.taffybar
         thunderbird
+        transmission-gtk
         udisks2
         unzip
         neovim
@@ -185,6 +186,7 @@ in
         # Pulse audio control
         # pavucontrol
 
+        mplayer
         ffmpeg
         spotify
         vlc
