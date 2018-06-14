@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./shares.nix
+      ./machine-specific.nix
     ];
 
   nix.binaryCaches = [
@@ -22,20 +22,9 @@
     "qfpl.io:xME0cdnyFcOlMD1nwmn6VrkkGgDNLLpMXoMYl58bz5g="
   ];
 
-  nix.buildCores = 4;
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  # Mount our encrypted partition before looking for LVM
-  boot.initrd.luks.devices = [
-    {
-      name = "root";
-      device = "/dev/nvme0n1p2";
-      preLVM = true;
-    }
-  ];
 
   sound.enable = true;
 
@@ -52,7 +41,6 @@
   # };
 
 
-  networking.hostName = "stevie"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
 
@@ -80,7 +68,7 @@
 
   # Enable virtualisation - otherwise get missing vboxdrv error
   virtualisation.virtualbox.host.enable = true;
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
   # List services that you want to enable:
 

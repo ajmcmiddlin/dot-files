@@ -51,6 +51,7 @@ values."
      ruby
      ;; scala
      semantic
+     shell-scripts
      (spell-checking :variables spell-checking-enable-by-default nil)
      sql
      syntax-checking
