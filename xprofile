@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-. ~/.profile
-
-export EDITOR=nvim
-
 # Start keychain and unlock our private key. Clear any previously loaded keys - i.e. assume login
 # is unauthorised until proven otherwise. Don't ask for passphrases yet - just set it up so that
 # when we add keys they're available to everyone. To add a key, do something like:
@@ -23,4 +19,3 @@ firefox &
 thunderbird &
 spotify &
 redshift -l -27.45817:153.03443 &
-
