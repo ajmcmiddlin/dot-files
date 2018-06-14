@@ -146,7 +146,7 @@
     group = "users";
     home = "/home/andrew";
     isNormalUser = true;
-    # shell = pkgs.fish;
+    shell = pkgs.fish;
     uid = 1000;
   };
 
