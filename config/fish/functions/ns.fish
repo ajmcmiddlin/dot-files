@@ -1,3 +1,3 @@
 function ns
-  nix-env -qaPs --description $argv
+	nix-shell --run fish
 end
