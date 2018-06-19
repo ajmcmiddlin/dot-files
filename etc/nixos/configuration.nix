@@ -66,8 +66,9 @@
   programs.fish.enable = true;
   programs.bash.enableCompletion = true;
 
-  # Enable virtualisation - otherwise get missing vboxdrv error
+  # Enable VirtualBox (don't install the package)
   virtualisation.virtualbox.host.enable = true;
+
   # virtualisation.docker.enable = true;
 
   # List services that you want to enable:
