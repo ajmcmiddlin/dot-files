@@ -6,7 +6,7 @@ function dontHaveKey
   not ssh-add -l | grep /home/andrew/\.ssh/id_rsa > /dev/null;
 end
 
-if begin dontHaveKey; and status --is-interactive; and not status --is-login end
+if begin dontHaveKey; and status --is-interactive; and not status --is-login; end
   ssh-add
 end
 
