@@ -76,6 +76,7 @@ in
         firefox
         gimp
         gnupg
+        gvolicon
         htop
         inkscape
         keepassx
