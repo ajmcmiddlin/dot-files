@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+autossh -M 0 -f -T -N $@
