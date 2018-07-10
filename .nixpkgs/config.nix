@@ -101,6 +101,7 @@ in
         slop
         haskellPackages.taffybar
         thunderbird
+        tigervnc
         transmission-gtk
         udisks2
         unzip
