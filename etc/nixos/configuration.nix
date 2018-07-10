@@ -79,9 +79,9 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    permitRootLogin = false;
+    permitRootLogin = "no";
     passwordAuthentication = false;
-  }
+  };
 
   # Handle lid close
   # THESE ARE APPARENTLY THE DEFAULTS
