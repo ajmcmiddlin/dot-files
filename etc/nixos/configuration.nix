@@ -77,7 +77,11 @@
   services.pcscd.enable = true;
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    permitRootLogin = false;
+    passwordAuthentication = false;
+  }
 
   # Handle lid close
   # THESE ARE APPARENTLY THE DEFAULTS
@@ -149,6 +153,11 @@
     isNormalUser = true;
     shell = pkgs.fish;
     uid = 1000;
+    openssh.authorizedKeys.keys = [
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD703y9vkye+NwmswvGDCCdZqyrvE5yQTXq6S1GbNOsRe7LV5nkVsZfA5uKFa1Bhbl6lvSB4y0EgDzXCUNwm3SyqM0ClywOpt0A5Z6DFbMEnFUz0HVCN8fgbhnftX1Nu8NOWucuVVQi1jj4rkttR9MMWS4YJ2HZLVJ4b59C0Ko/hGzuzcvWsKPrZ/5jQWjdCIPVqqQ+2aSlH2ykmRwH+TpqMjjZSQi10MZYnzpnbbV3CFmLo6guPtylcrf52N/XsQo/WHyy53dzBGRt7LXekShOVIhBN4i4koTLIulnWrT0babHzhLwheBPw/1QN8kAB8ZdHB/3wWhAEqTJI7V8hUvqsilexjLx/q6s1hIYfM84i6LgWkjwzWEkBMv4ZRceYv5HKKNMi6460GquXwhv+rXv1ZiAvOL7Md9+i2oVqgVI3QQHsneskPqlyy4DKtkCvUBDl+Y1eqxcZChUU2SoJ7lAaDpJ8fVL3RRB36WQxU4Itjac1J5O91maqrK2lClXR1xSa6FjLjx40OlywRN5cdGdAgo9K/nJeoTgqfEvZKKC5j8VZJnTIPxlWmt26EOGbsgZgEmoTv9CThdVO3dOaWsFjqAWiO8DNfpaSMaWNsMp64dxT8lNtZsEMT0piF7OXUhivF30lpHjeF0j9Ab3F6XQIjBGkpDggYHal7VDmg/w5Q== andrew@stevie"
+
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEIyBpALOSXxw9d1maCBA3fQmwT1rc5jhPHXmLPlxmppV060EDfKqJyjjz0H5IqvqNbjMt2cI2plleoMjPvOY4oVwPq8xxAHKeS+iE4uLcW+N3piHeQxn0IV5RBLF2XMRZ3ZbhuM1TF5IzdmIr2mkFqbEjokmFY/fqeofD1JAEqa31xW9N4B5m4TR9HH6AMoBU8gWsVQk9UQEBUgpEUx9GYySKOuj3x+lWZANFxqAMKz4ABh0YTobL+TMeXiTghltPi9lzBO16VrKBzPNy0jNeUdmxyzqpCzUxoVtZZXLFVxPXv1HZqKgZurzbgE8/BielkIAJmUaYjvm5NOuIWolT4SmRfOT69QiUDYXcvLt7qew6IFBUUL3eQSXNB4gJENPLuPnVvtrE5Iey1YYBeTjTkLRwqvMVmqo9MuNYW4kWfxW/y10hv46Pu3JRwZX3SzXktGRkdJnPHDiAvnhGg9rP628gF2YUbXQHyeldpy/eysTBEDNZr6KMH3mxEVPNktDHazBzb1eu6aPIHyYIqxZEwJ8fbTPeqCrZHl845fT7yN8LlBPDV2lZ0d4wGcgf/HW5M1pVNlDJTROzwuIv2X4r7is8/uZHyC1HYQiUf6WMsIDtKavZbyxjh/034okdraTYB0YvObK02WdG3Yg1R20WBNzletSR8WTm0DNBZzX9MQ== andrew@hermes"
+    ];
   };
 
   # This value determines the NixOS release with which your system is to be
