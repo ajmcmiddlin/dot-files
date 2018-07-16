@@ -34,11 +34,11 @@
   };
 
   hardware.bluetooth.enable = true;
-  # hardware.pulseaudio = {
-  #   enable = true;
-  #   # Get a lightweight package by default. Need full to support BT audio.
-  #   package = pkgs.pulseaudioFull;
-  # };
+  hardware.pulseaudio = {
+    enable = true;
+    # Get a lightweight package by default. Need full to support BT audio.
+    # package = pkgs.pulseaudioFull;
+  };
 
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -61,6 +61,8 @@
     exfat
     exfat-utils
     fuse_exfat
+
+    pavucontrol
   ]);
 
   programs.fish.enable = true;
