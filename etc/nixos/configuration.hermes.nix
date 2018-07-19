@@ -9,6 +9,8 @@
 
   networking.hostName = "hermes"; # Define your hostname.
 
+  boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
+
   # LUKS root device
   boot.initrd.luks.devices = [
     {
@@ -17,4 +19,6 @@
       preLVM = true;
     }
   ];
+
+  hardware.pulseaudio.package = pkgs.pulseaudioLight.override { jackaudioSupport = true; };
 }
