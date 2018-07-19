@@ -31,8 +31,21 @@ in
     ######################################################
 
     ## My one-shot install environment.
-    my-meta-env = buildEnv {
-      name = "meta-env";
+    hermes-env = buildEnv {
+      name = "hermes-env";
+      paths = [
+        my-dev-tools
+        my-essentials
+        my-haskell-env
+        my-laptop-tools
+        my-media
+        my-games
+        my-recording
+      ];
+    };
+
+    stevie-env = buildEnv {
+      name = "stevie-env";
       paths = [
         my-dev-tools
         my-essentials
@@ -44,7 +57,7 @@ in
 
     ## Haskell environment
     my-haskell-env = buildEnv {
-      name = "haskell-env";
+      name = "my-haskell-env";
       paths = with pkgs.haskellPackages; [
         apply-refact
         cabal2nix
@@ -59,7 +72,7 @@ in
     };
 
     my-essentials = buildEnv {
-      name = "essentials";
+      name = "my-essentials";
       paths = [
         arandr
         aspell
@@ -76,7 +89,6 @@ in
         firefox
         gimp
         gnupg
-        gvolicon
         htop
         inkscape
         keepassx
@@ -84,6 +96,7 @@ in
         libreoffice
         maim
         gnome3.nautilus
+        neovim
         networkmanagerapplet
         nix-prefetch-scripts
         nix-repl
@@ -105,7 +118,7 @@ in
         transmission-gtk
         udisks2
         unzip
-        neovim
+        volumeicon
         wget
         which
         xclip
@@ -120,7 +133,7 @@ in
     };
 
     my-laptop-tools = buildEnv {
-      name = "laptop-tools";
+      name = "my-laptop-tools";
       paths = [
         powertop
         upower
@@ -129,7 +142,7 @@ in
     };
 
     my-python-data-science-env = buildEnv {
-      name = "python-data-science-env";
+      name = "my-python-data-science-env";
       paths = with pkgs.python3.pkgs; [
         jupyter
         matplotlib
@@ -141,7 +154,7 @@ in
     };
 
     my-games = buildEnv {
-      name = "games";
+      name = "my-games";
       paths = [
         unstable.crawlTiles
         # openarena
@@ -150,7 +163,7 @@ in
     };
 
     my-dev-tools = buildEnv {
-      name = "dev-tools";
+      name = "my-dev-tools";
       paths = [
         ansible
         binutils
@@ -178,14 +191,14 @@ in
     };
 
     my-keyboard-tools = buildEnv {
-      name = "keyboard-tools";
+      name = "my-keyboard-tools";
       paths = [
         dfu-util
       ];
     };
 
     my-media = buildEnv {
-      name = "media";
+      name = "my-media";
       paths = [
         # Pulse audio control
         # pavucontrol
@@ -197,8 +210,19 @@ in
       ];
     };
 
+    my-recording = buildEnv {
+      name = "my-recording";
+      paths = [
+        ardour
+        audacity
+
+        # jack2Full
+        qjackctl
+      ];
+    };
+
     my-bluetooth = buildEnv {
-      name = "bluetooth";
+      name = "my-bluetooth";
       paths = [
         blueman
       ];
