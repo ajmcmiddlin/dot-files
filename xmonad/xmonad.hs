@@ -34,6 +34,8 @@ main = xmonad . docks . ewmh . pagerHints $ def
   , workspaces = myWorkspaces
   }
 
+-- Find keys using `xev -event keyboard` and look for the `keysym`.
+-- If `xev` doesn't give you the event, try `xmodmap -pk | grep <foo>`
 myKeys :: XConfig Layout -> M.Map (XT.ButtonMask, XT.KeySym) (X ())
 myKeys conf@(XConfig {modMask = modm}) =
   let xK_X86MonBrightnessDown = 0x1008ff03
