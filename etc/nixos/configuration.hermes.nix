@@ -21,4 +21,27 @@
   ];
 
   hardware.pulseaudio.package = pkgs.pulseaudioLight.override { jackaudioSupport = true; };
+
+  # environment.systemPackages = (with pkgs; [
+  #   jack2Full
+  # ]);
+
+  users.groups = { realtime = {}; };
+
+  # Set limits for realtime -- used by JACK
+  security.pam.loginLimits = [
+    { domain = "@realtime";
+      type = "-";
+      item = "rtprio";
+      value = "99";
+    }
+
+    { domain = "@realtime";
+      type = "-";
+      item = "memlock";
+      value = "unlimited";
+    }
+  ];
+
+  users.extraUsers.andrew.extraGroups = ["realtime"];
 }
