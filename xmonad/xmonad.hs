@@ -34,6 +34,8 @@ main = xmonad . docks . ewmh . pagerHints $ def
   , workspaces = myWorkspaces
   }
 
+-- Find keys using `xev -event keyboard` and look for the `keysym`.
+-- If `xev` doesn't give you the event, try `xmodmap -pk | grep <foo>`
 myKeys :: XConfig Layout -> M.Map (XT.ButtonMask, XT.KeySym) (X ())
 myKeys conf@(XConfig {modMask = modm}) =
   let xK_X86MonBrightnessDown = 0x1008ff03
@@ -41,6 +43,8 @@ myKeys conf@(XConfig {modMask = modm}) =
       xK_X86AudioLowerVolume  = 0x1008ff11
       xK_X86AudioRaiseVolume  = 0x1008ff13
       xK_X86AudioMute         = 0x1008ff12
+      xK_X86AudioPlay         = 0x1008ff14
+      spotifyPlayPause        = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
       kees =
         M.fromList [ ((0, XT.xK_Print), spawn "maim -c 1,0,0,0.6 -s ~/screenshots/$(date +%F_%T).png")
                    , ((modm, XT.xK_Print), spawn "maim -s --format png -c 1,0,0,0.6 /dev/stdout | xclip -selection clipboard -t image/png -i")
@@ -50,6 +54,7 @@ myKeys conf@(XConfig {modMask = modm}) =
                    , ((0, xK_X86AudioLowerVolume), spawn "amixer sset Master 5%-")
                    , ((0, xK_X86AudioRaiseVolume), spawn "amixer sset Master 5%+")
                    , ((0, xK_X86AudioMute), spawn "amixer sset Master toggle")
+                   , ((0, xK_X86AudioPlay), spawn spotifyPlayPause)
                    , ((XT.controlMask .|. XT.mod1Mask, XT.xK_q), spawn "~/.screenlayout/laptop-only.sh")
                    , ((XT.controlMask .|. XT.mod1Mask, XT.xK_w), spawn "~/.screenlayout/the-fort.sh")
                    , ((XT.controlMask .|. XT.mod1Mask, XT.xK_e), spawn "~/.screenlayout/home-office.sh")

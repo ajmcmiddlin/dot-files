@@ -170,6 +170,7 @@ in
         docker_compose
         emacs
         git
+        git-crypt
         gnumake
         nixops
         patchelf
@@ -216,7 +217,7 @@ in
         ardour
         audacity
 
-        # jack2Full
+        jack2Full
         qjackctl
       ];
     };
