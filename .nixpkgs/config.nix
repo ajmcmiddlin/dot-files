@@ -170,6 +170,7 @@ in
         docker_compose
         emacs
         git
+        git-crypt
         gnumake
         nixops
         patchelf
