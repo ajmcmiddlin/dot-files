@@ -216,7 +216,7 @@ in
         ardour
         audacity
 
-        # jack2Full
+        jack2Full
         qjackctl
       ];
     };
