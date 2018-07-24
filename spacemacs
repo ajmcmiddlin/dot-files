@@ -2,10 +2,6 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-;; Updated bd0b4bae..fd905479 on 2018-02-26
-;; Updated fd905479..d4017b1c on 2018-04-18
-;; Updated d4017b1ca..1a5664e43 on 2018-05-13
-
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
@@ -305,4 +301,6 @@ you should place your code here."
           (new-build . ,(lambda (root) (when (or (directory-files root nil ".*\\.cabal$") (file-exists-p "cabal.project"))
                                          '("cabal" "new-repl" dante-target "--builddir=dist/dante"))))
           (bare . ,(lambda (_) '("cabal" "repl" dante-target "--builddir=dist/dante")))))
+
+  (setq auth-sources (quote ("~/.authinfo.gpg" "~/.authinfo" "~/.netrc")))
   )
