@@ -15,4 +15,4 @@ spotify &
 redshift -l -27.45817:153.03443 &
 volumeicon &
 
-. ~/git/dot-files/xprofile-encrypted
+# . ~/git/dot-files/xprofile-encrypted
