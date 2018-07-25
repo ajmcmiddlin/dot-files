@@ -22,8 +22,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (auto-completion
-       (haskell :variables haskell-completion-backend 'dante))
+     auto-completion
      ;; better-defaults
      ;; c-c++
      ;; cscope
@@ -31,7 +30,9 @@ values."
      emacs-lisp
      git
      github
-     (haskell :variables haskell-enable-hindent-style "chris-done")
+     (haskell :variables
+              haskell-enable-hindent-style "chris-done"
+              haskell-completion-backend 'dante)
      haskell-ajm
      html
      ipython-notebook
@@ -300,7 +301,6 @@ you should place your code here."
           (mafia . ,(lambda (root) (dante-repl-by-file root '("mafia") '("mafia" "repl" dante-target))))
           (new-build . ,(lambda (root) (when (or (directory-files root nil ".*\\.cabal$") (file-exists-p "cabal.project"))
                                          '("cabal" "new-repl" dante-target "--builddir=dist/dante"))))
-          (bare . ,(lambda (_) '("cabal" "repl" dante-target "--builddir=dist/dante")))))
-
+          (bare . ,(lambda (_) '("cabal" "new-repl" dante-target "--builddir=dist/dante")))))
   (setq auth-sources (quote ("~/.authinfo.gpg" "~/.authinfo" "~/.netrc")))
   )
