@@ -36,6 +36,10 @@
   hardware.bluetooth.enable = true;
   hardware.pulseaudio = {
     enable = true;
+    daemon.config = {
+      # Allow app volumes to be set independently of master
+      flat-volumes = "no";
+    };
     # Get a lightweight package by default. Need full to support BT audio.
     # package = pkgs.pulseaudioFull;
   };
