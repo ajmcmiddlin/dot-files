@@ -56,6 +56,18 @@
     defaultLocale = "en_AU.UTF-8";
   };
 
+  fonts = {
+    enableFontDir = true;
+    enableGhostscriptFonts = true;
+    fonts = with pkgs; [
+      corefonts  # Micrsoft free fonts
+      inconsolata  # monospaced
+      ubuntu_font_family  # Ubuntu fonts
+      terminus_font # for hidpi screens, large fonts
+      liberation_ttf
+    ];
+  };
+
   # Set your time zone.
   time.timeZone = "Australia/Brisbane";
 
