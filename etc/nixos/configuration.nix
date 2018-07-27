@@ -5,6 +5,9 @@
 { config, pkgs, ... }:
 
 {
+  # Needed for corefonts
+  nixpkgs.config.allowUnfree = true;
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -47,7 +50,6 @@
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
-  avahi.enable = true;
 
   # Select internationalisation properties.
   i18n = {
@@ -70,12 +72,6 @@
 
   # Set your time zone.
   time.timeZone = "Australia/Brisbane";
-
-  redshift = {
-    enable = true;
-    latitude = "-27.45817";
-    longitude = "153.03443";
-  };
 
   # SEE .nixpkgs/config.nix for installed packages
   # List packages installed in system profile. To search by name, run:
@@ -101,20 +97,19 @@
   # Enable yubikey
   services.pcscd.enable = true;
 
+  # Blue light filter
+  services.redshift = {
+    enable = true;
+    latitude = "-27.45817";
+    longitude = "153.03443";
+  };
+
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
     permitRootLogin = "no";
     passwordAuthentication = false;
   };
-
-  # Handle lid close
-  # THESE ARE APPARENTLY THE DEFAULTS
-  # services.logind.extraConfig = ''
-  #   HandleLidSwitch=suspend
-  #   HandlePowerKey=hibernate
-  #   HandleLidSwitchDocked=ignore
-  # '';
 
   # Enable upower service - used by taffybar's battery widget
   services.upower.enable = true;
@@ -125,6 +120,9 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # Zero configuration DNS broadcast
+  services.avahi.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
