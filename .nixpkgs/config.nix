@@ -106,7 +106,6 @@ in
         pandoc
         pass
         qtpass
-        redshift
         rxvt_unicode-with-plugins
         samba
         signal-desktop
