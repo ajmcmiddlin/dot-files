@@ -1,3 +1,3 @@
 #!/usr/bin/env fish
 
-pandoc --from=markdown --to=html $argv[1]
+pandoc --from=markdown --to=html5 $argv[1]
