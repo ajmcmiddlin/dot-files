@@ -2,7 +2,7 @@ import           System.Taffybar
 
 import           System.Taffybar.Battery (batteryBarNew, defaultBatteryConfig)
 import           System.Taffybar.FreedesktopNotifications
-import           System.Taffybar.MPRIS
+import           System.Taffybar.MPRIS2
 import           System.Taffybar.SimpleClock
 import           System.Taffybar.Systray
 import           System.Taffybar.TaffyPager
@@ -35,7 +35,7 @@ main =
       pager = taffyPagerNew defaultPagerConfig
       note = notifyAreaNew defaultNotificationConfig
       -- wea = weatherNew (defaultWeatherConfig "KMSN") 10
-      -- mpris = mprisNew defaultMPRISConfig
+      mpris2 = mpris2New
       mem = pollingGraphNew memCfg 1 memCallback
       cpu = pollingGraphNew cpuCfg 0.5 cpuCallback
       tray = systrayNew
@@ -44,5 +44,5 @@ main =
     defaultTaffybar defaultTaffybarConfig { barHeight = 22
                                           , widgetSpacing = 10
                                           , startWidgets = [ pager, note ]
-                                          , endWidgets = [ clock, tray, batt, mem, cpu ]
+                                          , endWidgets = [ clock, tray, batt, mem, cpu, mpris2 ]
                                           }
