@@ -1,6 +1,9 @@
 import           System.Taffybar
 
-import           System.Taffybar.Battery (batteryBarNew, defaultBatteryConfig)
+import           System.Taffybar.Battery                  (batteryBarNew,
+                                                           defaultBatteryConfig)
+-- TODO: add this back in with taffybar2
+-- import           System.Taffybar.DBus.Toggle              (handleDBusToggles)
 import           System.Taffybar.FreedesktopNotifications
 import           System.Taffybar.MPRIS2
 import           System.Taffybar.SimpleClock
@@ -41,8 +44,11 @@ main =
       tray = systrayNew
       batt = batteryBarNew defaultBatteryConfig 60.0
   in
-    defaultTaffybar defaultTaffybarConfig { barHeight = 22
-                                          , widgetSpacing = 10
-                                          , startWidgets = [ pager, note ]
-                                          , endWidgets = [ clock, tray, batt, mem, cpu, mpris2 ]
-                                          }
+    -- TODO: add this back in with taffybar2
+    -- defaultTaffybar . handleDBusToggle $
+    defaultTaffybar
+      defaultTaffybarConfig { barHeight = 22
+                            , widgetSpacing = 10
+                            , startWidgets = [ pager, note ]
+                            , endWidgets = [ clock, tray, batt, mem, cpu, mpris2 ]
+                            }
