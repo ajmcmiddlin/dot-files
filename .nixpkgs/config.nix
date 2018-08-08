@@ -180,7 +180,9 @@ in
         silver-searcher
         sqlite-interactive
         vagrant
-        virtualbox
+        # I don't know how this ended up getting installed, but it shouldn't be. Enabling
+        # virtualbox virtualisation in the system's configuration.nix should be all we do.
+        # virtualbox
         vscode
       ];
     };
