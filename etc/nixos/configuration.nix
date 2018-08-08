@@ -64,9 +64,12 @@
     fonts = with pkgs; [
       corefonts  # Micrsoft free fonts
       inconsolata  # monospaced
-      ubuntu_font_family  # Ubuntu fonts
-      terminus_font # for hidpi screens, large fonts
       liberation_ttf
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      terminus_font # for hidpi screens, large fonts
+      ubuntu_font_family  # Ubuntu fonts
     ];
   };
 
