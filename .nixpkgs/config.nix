@@ -68,6 +68,8 @@ in
         hlint
         hoogle
         stylish-haskell
+        # TODO: re-enable this when it passes tests
+        # unicode-show
       ];
     };
 
