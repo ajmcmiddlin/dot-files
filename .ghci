@@ -1,2 +1,7 @@
 -- Lambda prompt and no list of imports. Use `:show imports` if you need to see them.
 :set prompt  "\x03BB> "
+
+-- Unicode print/show
+-- TODO: re-enable this when it passes tests
+-- import qualified Text.Show.Unicode
+-- :set -interactive-print=Text.Show.Unicode.uprint

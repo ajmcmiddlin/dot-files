@@ -68,6 +68,8 @@ in
         hlint
         hoogle
         stylish-haskell
+        # TODO: re-enable this when it passes tests
+        # unicode-show
       ];
     };
 
@@ -100,6 +102,7 @@ in
         networkmanagerapplet
         nix-prefetch-scripts
         nix-repl
+        obs-studio
         # openconnect
         # openconnect_openssl
         owncloud-client
