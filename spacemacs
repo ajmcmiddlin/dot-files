@@ -61,7 +61,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(nix-sandbox)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(
                                     ;; Prevents nix-shel path from being loaded
@@ -303,4 +303,9 @@ you should place your code here."
                                          '("cabal" "new-repl" dante-target "--builddir=dist/dante"))))
           (bare . ,(lambda (_) '("cabal" "new-repl" dante-target "--builddir=dist/dante")))))
   (setq auth-sources (quote ("~/.authinfo.gpg" "~/.authinfo" "~/.netrc")))
+
+  ;; Configure haskell-mode (haskell-cabal) to use Nix
+  (setq haskell-process-wrapper-function
+        (lambda (args) (apply 'nix-shell-command (nix-current-sandbox) args)))
+  (setq haskell-process-type 'cabal-new-repl)
   )
