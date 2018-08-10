@@ -2,9 +2,10 @@ import qualified Data.Map                         as M
 import           Data.Monoid                      ((<>))
 
 import qualified Graphics.X11.Types               as XT
-import           XMonad                           (Layout, ManageHook, X,
-                                                   XConfig (..), def, spawn,
-                                                   windows, xmonad, (.|.), (|||), Window)
+import           XMonad                           (Layout, ManageHook, Window,
+                                                   X, XConfig (..), def,
+                                                   mod4Mask, spawn, windows,
+                                                   xmonad, (.|.), (|||))
 import           XMonad.Actions.SpawnOn           (manageSpawn, spawnOn)
 import           XMonad.Hooks.EwmhDesktops        (ewmh, fullscreenEventHook)
 import           XMonad.Hooks.ManageDocks         (avoidStruts, docks,
@@ -13,8 +14,9 @@ import           XMonad.Hooks.ManageHelpers       (doFullFloat, isFullscreen)
 --import           XMonad.Layout          ((|||), Layout)
 import           XMonad.Layout.NoBorders          (smartBorders)
 import           XMonad.Layout.ThreeColumns       (ThreeCol (ThreeCol, ThreeColMid))
-import           XMonad.ManageHook                (appName, className, composeAll,
-                                                   doShift, (-->), (<+>), (=?))
+import           XMonad.ManageHook                (appName, className,
+                                                   composeAll, doShift, (-->),
+                                                   (<+>), (=?))
 
 import           System.Taffybar.Hooks.PagerHints (pagerHints)
 
@@ -32,6 +34,7 @@ main = xmonad . docks . ewmh . pagerHints $ def
   , manageHook = myManageHook <+> manageDocks <+> manageHook def
   , terminal = "urxvt"
   , workspaces = myWorkspaces
+  , modMask = mod4Mask
   }
 
 -- Find keys using `xev -event keyboard` and look for the `keysym`.
