@@ -60,9 +60,9 @@ myKeys conf@(XConfig {modMask = modm}) =
                    , ((0, xK_X86AudioPlay), spawn (spotify "PlayPause"))
                    , ((0, xK_X86AudioPrev), spawn (spotify "Previous"))
                    , ((0, xK_X86AudioNext), spawn (spotify "Next"))
-                   , ((XT.controlMask .|. XT.mod1Mask, XT.xK_q), spawn "~/.screenlayout/laptop-only.sh")
-                   , ((XT.controlMask .|. XT.mod1Mask, XT.xK_w), spawn "~/.screenlayout/the-fort.sh HDMI1")
-                   , ((XT.controlMask .|. XT.mod1Mask, XT.xK_e), spawn "~/.screenlayout/home-office.sh")
+                   , ((XT.controlMask .|. modm, XT.xK_q), spawn "~/.screenlayout/laptop-only.sh")
+                   , ((XT.controlMask .|. modm, XT.xK_w), spawn "~/.screenlayout/the-fort.sh HDMI1")
+                   , ((XT.controlMask .|. modm, XT.xK_e), spawn "~/.screenlayout/home-office.sh")
                    , ((modm .|. XT.shiftMask, XT.xK_p), spawn "passmenu")
                    ]
   in kees <> keys def conf
