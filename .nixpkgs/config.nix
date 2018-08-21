@@ -234,6 +234,7 @@ in
       name = "my-bluetooth";
       paths = [
         blueman
+        (pkgs.bluez.override { enableWiimote = true; })
       ];
     };
 
