@@ -92,6 +92,7 @@ in
         gimp
         gnupg
         htop
+        imagemagick
         inkscape
         keepassx
         keychain
