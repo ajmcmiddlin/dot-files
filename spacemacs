@@ -41,6 +41,12 @@ values."
      markdown
      nixos
      octave
+     (org :variables
+          org-projectile-file "project.org"
+          ;; Capture templates are a useful thing to investigate
+          ;; https://orgmode.org/org.html#Template-expansion
+          ;; (add-to-list 'org-capture-templates ...)
+     )
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
