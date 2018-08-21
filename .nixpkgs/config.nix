@@ -34,6 +34,7 @@ in
     hermes-env = buildEnv {
       name = "hermes-env";
       paths = [
+        my-bluetooth
         my-dev-tools
         my-essentials
         my-haskell-env
@@ -86,12 +87,14 @@ in
         dmenu
         encfs
         evince
+        evtest
         exfat
         feh
         firefox
         gimp
         gnupg
         htop
+        imagemagick
         inkscape
         keepassx
         keychain
@@ -124,6 +127,7 @@ in
         wget
         which
         xclip
+        xorg.xev
         xscreensaver
         yubioath-desktop
 
