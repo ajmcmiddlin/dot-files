@@ -36,7 +36,11 @@
     driSupport32Bit = true;
   };
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
+
   hardware.pulseaudio = {
     enable = true;
     daemon.config = {
