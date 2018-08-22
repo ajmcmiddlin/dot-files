@@ -177,7 +177,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.extraUsers.andrew = {
     createHome = true;
-    extraGroups = ["wheel" "video" "audio" "disk" "networkmanager" "docker" "vboxusers"];
+    extraGroups = ["wheel" "video" "audio" "disk" "networkmanager" "docker" "vboxusers" "input"];
     group = "users";
     home = "/home/andrew";
     isNormalUser = true;
