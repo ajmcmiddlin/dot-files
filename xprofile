@@ -2,6 +2,7 @@
 
 taffybar &
 nm-applet &
+blueman-applet &
 owncloud &
 qtpass &
 signal-desktop &
