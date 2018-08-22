@@ -8,6 +8,8 @@
   # Needed for corefonts
   nixpkgs.config.allowUnfree = true;
 
+  # nixpkgs.overlays = [ (import /home/andrew/.config/nixpkgs/overlays) ];
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
