@@ -101,6 +101,11 @@ in
         libreoffice
         maim
         gnome3.nautilus
+
+        # needed for blueman to save settings
+        gnome3.gnome_settings_daemon
+        gnome3.dconf
+
         neovim
         networkmanagerapplet
         nix-prefetch-scripts
@@ -235,6 +240,10 @@ in
       paths = [
         blueman
         (pkgs.bluez.override { enableWiimote = true; })
+
+        # This comes from an overlay and doesn't quite work atm
+        xf86-input-xwiimote
+        xwiimote
       ];
     };
 
