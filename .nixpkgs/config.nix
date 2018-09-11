@@ -182,6 +182,7 @@ in
         emacs
         git
         git-crypt
+        gitAndTools.gitRemoteGcrypt
         gnumake
         nixops
         patchelf
