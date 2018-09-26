@@ -84,6 +84,7 @@ in
         calibre
         chromium
         cifs-utils
+        dia
         dmenu
         encfs
         evince
@@ -121,6 +122,7 @@ in
         samba
         signal-desktop
         silver-searcher
+        skype
         slop
         haskellPackages.taffybar
         thunderbird
@@ -135,6 +137,7 @@ in
         xorg.xev
         xscreensaver
         yubioath-desktop
+        zoom-us
 
         # For clipboard syncing
         xsel
