@@ -12,8 +12,8 @@
 
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./machine-specific.nix
+      /etc/nixos/hardware-configuration.nix
+      /etc/nixos/machine-specific.nix
     ];
 
   nix.binaryCaches = [

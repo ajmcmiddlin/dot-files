@@ -48,6 +48,7 @@ in
     stevie-env = buildEnv {
       name = "stevie-env";
       paths = [
+        my-bluetooth
         my-dev-tools
         my-essentials
         my-haskell-env
@@ -185,6 +186,7 @@ in
         emacs
         git
         git-crypt
+        gitAndTools.gitRemoteGcrypt
         gnumake
         nixops
         patchelf
