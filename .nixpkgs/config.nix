@@ -121,7 +121,7 @@ in
         qtpass
         rxvt_unicode-with-plugins
         samba
-        signal-desktop
+        unstable.signal-desktop
         silver-searcher
         skype
         slop
