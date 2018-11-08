@@ -123,7 +123,6 @@ in
         samba
         unstable.signal-desktop
         silver-searcher
-        skype
         slop
         haskellPackages.taffybar
         thunderbird
@@ -188,15 +187,13 @@ in
         git-crypt
         gitAndTools.gitRemoteGcrypt
         gnumake
+        graphviz
         nixops
         patchelf
         postgresql
         silver-searcher
         sqlite-interactive
         vagrant
-        # I don't know how this ended up getting installed, but it shouldn't be. Enabling
-        # virtualbox virtualisation in the system's configuration.nix should be all we do.
-        # virtualbox
         vscode
       ];
     };
