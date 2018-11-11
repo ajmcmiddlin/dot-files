@@ -49,6 +49,7 @@ This function should only modify configuration layer settings."
      (haskell :variables
               haskell-enable-hindent-style "chris-done"
               haskell-completion-backend 'dante)
+     graphviz
      haskell-ajm
      helm
      html
