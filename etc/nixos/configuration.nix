@@ -22,7 +22,7 @@
     "https://nixcache.reflex-frp.org"
   ];
 
-  nix.trustedPublicKeys = [
+  nix.binaryCachePublicKeys = [
     "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
     "qfpl.io:xME0cdnyFcOlMD1nwmn6VrkkGgDNLLpMXoMYl58bz5g="
   ];
