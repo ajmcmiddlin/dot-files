@@ -183,8 +183,9 @@ in
         binutils
         docker_compose
         emacs
-        git
         git-crypt
+        gitAndTools.gitflow
+        gitAndTools.gitFull
         gitAndTools.gitRemoteGcrypt
         gnumake
         graphviz
