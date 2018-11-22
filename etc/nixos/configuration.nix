@@ -16,13 +16,13 @@
       /etc/nixos/machine-specific.nix
     ];
 
-  nix.binaryCaches = [
+  nix.trustedBinaryCaches = [
+    "http://hydra.qfpl.io"
     "https://cache.nixos.org"
     "https://nixcache.reflex-frp.org"
-    "http://hydra.qfpl.io"
   ];
 
-  nix.binaryCachePublicKeys = [
+  nix.trustedPublicKeys = [
     "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
     "qfpl.io:xME0cdnyFcOlMD1nwmn6VrkkGgDNLLpMXoMYl58bz5g="
   ];
