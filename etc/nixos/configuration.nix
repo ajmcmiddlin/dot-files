@@ -17,7 +17,7 @@
     ];
 
   nix.trustedBinaryCaches = [
-    "http://hydra.qfpl.io"
+    "https://hydra.qfpl.io"
     "https://cache.nixos.org"
     "https://nixcache.reflex-frp.org"
   ];
