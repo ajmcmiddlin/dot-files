@@ -16,10 +16,10 @@
       /etc/nixos/machine-specific.nix
     ];
 
-  nix.binaryCaches = [
+  nix.trustedBinaryCaches = [
+    "https://hydra.qfpl.io"
     "https://cache.nixos.org"
     "https://nixcache.reflex-frp.org"
-    "http://hydra.qfpl.io"
   ];
 
   nix.binaryCachePublicKeys = [
