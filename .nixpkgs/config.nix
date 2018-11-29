@@ -111,7 +111,6 @@ in
         neovim
         networkmanagerapplet
         nix-prefetch-scripts
-        nix-repl
         obs-studio
         # openconnect
         # openconnect_openssl
