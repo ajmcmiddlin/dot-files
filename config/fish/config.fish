@@ -1,6 +1,6 @@
 set -x EDITOR nvim
 
-source (dirname (status -f))"/init-ssh-agent.fish"
+# source (dirname (status -f))"/init-ssh-agent.fish"
 
 function dontHaveKey
   not ssh-add -l | grep /home/andrew/\.ssh/id_rsa > /dev/null;
