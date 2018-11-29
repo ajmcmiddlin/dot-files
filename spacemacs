@@ -495,18 +495,30 @@ before packages are loaded."
                (flycheck-add-next-checker 'haskell-dante
                                           '(warning . haskell-hlint))
                (add-to-list 'flycheck-disabled-checkers 'haskell-stack-ghc)))
+
+  ;; Would be nice to modify the default rather than copy it from code.
   (setq dante-repl-command-line-methods-alist
         `((styx  . ,(lambda (root) (dante-repl-by-file root '("styx.yaml") '("styx" "repl" dante-target))))
-          (nix   . ,(lambda (root)
-                      (dante-repl-by-file
-                        root
-                        '("shell.nix" "default.nix")
-                        '("nix-shell" "--run" (concat "cabal new-repl " (or dante-target "") " --builddir=dist/dante")))))
+          (nix   . ,(lambda (root) (dante-repl-by-file root '("shell.nix" "default.nix")
+                                                       '("nix-shell" "--pure" "--run" (concat "cabal new-repl " (or dante-target "") " --builddir=dist/dante")))))
+          (impure-nix
+           . ,(lambda (root) (dante-repl-by-file root '("shell.nix" "default.nix")
+                                                 '("nix-shell" "--run" (concat "cabal new-repl " (or dante-target "") " --builddir=dist/dante")))))
           (stack . ,(lambda (root) (dante-repl-by-file root '("stack.yaml") '("stack" "repl" dante-target))))
           (mafia . ,(lambda (root) (dante-repl-by-file root '("mafia") '("mafia" "repl" dante-target))))
-          (new-build . ,(lambda (root) (when (or (directory-files root nil ".*\\.cabal$") (file-exists-p "cabal.project"))
+          (new-build . ,(lambda (root) (when (or (directory-files root nil ".+\\.cabal$") (file-exists-p "cabal.project"))
                                          '("cabal" "new-repl" dante-target "--builddir=dist/dante"))))
-          (bare . ,(lambda (_) '("cabal" "new-repl" dante-target "--builddir=dist/dante")))))
+          (bare  . ,(lambda (_) '("cabal" "repl" dante-target "--builddir=dist/dante")))
+          (bare-ghci . ,(lambda (_) '("ghci")))))
+
+  ;; Redefine `nix` to use `new-repl`
+  ;; (setcdr (assq 'nix 'dante-repl-command-line-methods-alist)
+  ;;         (function (lambda (root)
+  ;;           (dante-repl-by-file root
+  ;;             '("shell.nix" "default.nix")
+  ;;             '("nix-shell" "--pure" "--run"
+  ;;               (concat "cabal new-repl " (or dante-target "") " --builddir=dist/dante"))))))
+
   (setq auth-sources (quote ("~/.authinfo.gpg" "~/.authinfo" "~/.netrc")))
 
   ;; Configure haskell-mode (haskell-cabal) to use Nix
