@@ -16,7 +16,7 @@
       /etc/nixos/machine-specific.nix
     ];
 
-  nix.trustedBinaryCaches = [
+  nix.binaryCaches = [
     "https://hydra.qfpl.io"
     "https://cache.nixos.org"
     "https://nixcache.reflex-frp.org"
