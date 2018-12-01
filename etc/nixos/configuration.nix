@@ -16,7 +16,7 @@
       /etc/nixos/machine-specific.nix
     ];
 
-  nix.trustedBinaryCaches = [
+  nix.binaryCaches = [
     "https://hydra.qfpl.io"
     "https://cache.nixos.org"
     "https://nixcache.reflex-frp.org"
@@ -95,6 +95,7 @@
 
   programs.fish.enable = true;
   programs.bash.enableCompletion = true;
+  programs.ssh.startAgent = true;
 
   # Enable VirtualBox (don't install the package)
   virtualisation.virtualbox.host.enable = true;
