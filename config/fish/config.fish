@@ -8,5 +8,6 @@ end
 
 if begin dontHaveKey; and status --is-interactive; and not status --is-login; end
   ssh-add
+  start-autos
 end
 
