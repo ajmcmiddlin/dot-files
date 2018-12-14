@@ -82,6 +82,7 @@ in
         aspell
         aspellDicts.en
         autossh
+        bind
         calibre
         chromium
         cifs-utils
