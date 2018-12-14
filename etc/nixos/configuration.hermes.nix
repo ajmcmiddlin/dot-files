@@ -9,6 +9,11 @@
 
   networking.hostName = "hermes"; # Define your hostname.
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [8080];
+  };
+
   boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
 
   # LUKS root device
