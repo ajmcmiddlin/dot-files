@@ -193,6 +193,7 @@ in
         patchelf
         postgresql
         silver-searcher
+        slack
         sqlite-interactive
         vagrant
         vscode
