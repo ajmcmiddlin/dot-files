@@ -499,8 +499,13 @@ before packages are loaded."
   ;; Would be nice to modify the default rather than copy it from code.
   (setq dante-repl-command-line-methods-alist
         `((styx  . ,(lambda (root) (dante-repl-by-file root '("styx.yaml") '("styx" "repl" dante-target))))
+          (nix-newbuild . ,(lambda (root)
+                             (when (directory-files root nil ".+\\.cabal$")
+                               (dante-repl-by-file root
+                                                   '("shell.nix" "default.nix")
+                                                   '("nix-shell" "--pure" "--run" (concat "cabal new-repl " (or dante-target "") " --builddir=dist/dante"))))))
           (nix   . ,(lambda (root) (dante-repl-by-file root '("shell.nix" "default.nix")
-                                                       '("nix-shell" "--pure" "--run" (concat "cabal new-repl " (or dante-target "") " --builddir=dist/dante")))))
+                                                       '("nix-shell" "--pure" "--run" "ghci"))))
           (impure-nix
            . ,(lambda (root) (dante-repl-by-file root '("shell.nix" "default.nix")
                                                  '("nix-shell" "--run" (concat "cabal new-repl " (or dante-target "") " --builddir=dist/dante")))))
