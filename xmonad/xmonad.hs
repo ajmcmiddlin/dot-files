@@ -11,7 +11,6 @@ import           XMonad.Hooks.EwmhDesktops        (ewmh, fullscreenEventHook)
 import           XMonad.Hooks.ManageDocks         (avoidStruts, docks,
                                                    manageDocks)
 import           XMonad.Hooks.ManageHelpers       (doFullFloat, isFullscreen)
---import           XMonad.Layout          ((|||), Layout)
 import           XMonad.Layout.NoBorders          (smartBorders)
 import           XMonad.Layout.ThreeColumns       (ThreeCol (ThreeCol, ThreeColMid))
 import           XMonad.ManageHook                (appName, className,
@@ -40,7 +39,7 @@ main = xmonad . docks . ewmh . pagerHints $ def
 -- Find keys using `xev -event keyboard` and look for the `keysym`.
 -- If `xev` doesn't give you the event, try `xmodmap -pk | grep <foo>`
 myKeys :: XConfig Layout -> M.Map (XT.ButtonMask, XT.KeySym) (X ())
-myKeys conf@(XConfig {modMask = modm}) =
+myKeys conf@XConfig {modMask = modm} =
   let xK_X86MonBrightnessDown = 0x1008ff03
       xK_X86MonBrightnessUp   = 0x1008ff02
       xK_X86AudioLowerVolume  = 0x1008ff11
@@ -92,7 +91,7 @@ myManageHook =
              , appName =? "Signal" --> doShift "9:Chat"
              , className =? "QtPass" --> doShift "7:Pass"
              , className =? "Spotify" --> doShift "4:Music"
-             , (isFullscreen --> doFullFloat)
+             , isFullscreen --> doFullFloat
              ]
 
 -- avoidStruts tells windows to avoid the "strut" where docks live
