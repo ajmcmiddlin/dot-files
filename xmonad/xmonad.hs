@@ -18,7 +18,7 @@ import           XMonad.ManageHook                (appName, className,
                                                    composeAll, doShift, (-->),
                                                    (<+>), (=?))
 
-import           System.Taffybar.Hooks.PagerHints (pagerHints)
+import           System.Taffybar.Support.PagerHints (pagerHints)
 
 -- docks: add dock (panel) functionality to your configuration
 -- ewmh: https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints - lets XMonad talk to panels
