@@ -125,6 +125,7 @@ in
         silver-searcher
         slop
         haskellPackages.taffybar
+        telnet
         thunderbird
         tigervnc
         transmission-gtk
