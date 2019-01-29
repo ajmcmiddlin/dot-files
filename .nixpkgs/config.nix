@@ -124,6 +124,7 @@ in
         unstable.signal-desktop
         silver-searcher
         slop
+        sublime3
         haskellPackages.taffybar
         telnet
         thunderbird
