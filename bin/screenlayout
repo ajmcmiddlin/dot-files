@@ -19,8 +19,8 @@ case $1 in
          mode_name="2560x1440_60"
          mode="311.83  2560 2744 3024 3488  1440 1441 1444 1490  -HSync +Vsync"
          laptop_mode=1600x900
-         laptop_pos=0x540
-         pos=1600x0
+         laptop_pos=2560x540
+         pos=0x0
          break
          ;;
     *)
