@@ -10,6 +10,12 @@ let
     sha256 = "0zng6khnnqmv2chl2r4hnc56yyikbvj5bqfcy7nia641s9mzvaa1";
   };
 
+  paperboy = import (pkgs.fetchgit {
+    url = "https://github.com/2mol/pboy";
+    rev = "df5888f8e3b64566ebf0249ef7c11d05b9705356";
+    sha256 = "0z5vnvzylzhwmwgh0jcvg8li5v6zf5rzrhd9spi9ckkk5rzbakd7";
+  });
+
   haskellDataSciencePackages = haskellPkgs: with haskellPkgs; [
     Frames
     foldl
@@ -117,6 +123,7 @@ in
         # openconnect_openssl
         owncloud-client
         pandoc
+        paperboy
         pass
         qtpass
         rxvt_unicode-with-plugins
