@@ -234,6 +234,7 @@ in
         ffmpeg
         spotify
         vlc
+        youtube-dl
       ];
     };
 
