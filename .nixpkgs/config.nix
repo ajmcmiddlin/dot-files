@@ -182,6 +182,7 @@ in
         unstable.crawlTiles
         # openarena
         steam
+        discord
       ];
     };
 
