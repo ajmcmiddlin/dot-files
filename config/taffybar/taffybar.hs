@@ -1,21 +1,32 @@
-import           System.Taffybar
+{-# LANGUAGE OverloadedStrings #-}
 
-import           System.Taffybar.Battery                  (batteryBarNew,
-                                                           defaultBatteryConfig)
+module Main where
+
+import           System.Taffybar
+import           System.Taffybar.SimpleConfig                    (barHeight, defaultSimpleTaffyConfig,
+                                                                  endWidgets,
+                                                                  simpleTaffybar,
+                                                                  startWidgets,
+                                                                  widgetSpacing)
+
 -- TODO: add this back in with taffybar2
 -- import           System.Taffybar.DBus.Toggle              (handleDBusToggles)
-import           System.Taffybar.FreedesktopNotifications
-import           System.Taffybar.MPRIS2
-import           System.Taffybar.SimpleClock
-import           System.Taffybar.Systray
-import           System.Taffybar.TaffyPager
-import           System.Taffybar.Weather
+import           System.Taffybar.Widget.FreedesktopNotifications (defaultNotificationConfig,
+                                                                  notifyAreaNew)
+import           System.Taffybar.Widget.MPRIS2                   (mpris2New)
+import           System.Taffybar.Widget.SimpleClock
+-- import           System.Taffybar.TaffyPager
+import           System.Taffybar.Widget.Weather
 
-import           System.Taffybar.Widgets.PollingBar
-import           System.Taffybar.Widgets.PollingGraph
+import           System.Taffybar.Widget.Generic.PollingBar
+import           System.Taffybar.Widget.Generic.PollingGraph
 
-import           System.Information.CPU
-import           System.Information.Memory
+import           System.Taffybar.Information.CPU                 (cpuLoad)
+import           System.Taffybar.Information.Memory
+import           System.Taffybar.Widget.Battery                  (batteryIconNew)
+import           System.Taffybar.Widget.SNITray                  (sniTrayNew)
+import           System.Taffybar.Widget.Workspaces               (defaultWorkspacesConfig,
+                                                                  workspacesNew)
 
 memCallback = do
   mi <- parseMeminfo
@@ -35,20 +46,21 @@ main =
                                   , graphLabel = Just "cpu"
                                   }
       clock = textClockNew Nothing "<span fgcolor='white'>%a %d %b %Y %H:%M:%S UTC+10</span>" 1
-      pager = taffyPagerNew defaultPagerConfig
+      -- pager = taffyPagerNew defaultPagerConfig
+      workspaces = workspacesNew defaultWorkspacesConfig
       note = notifyAreaNew defaultNotificationConfig
       -- wea = weatherNew (defaultWeatherConfig "KMSN") 10
       mpris2 = mpris2New
       mem = pollingGraphNew memCfg 1 memCallback
       cpu = pollingGraphNew cpuCfg 0.5 cpuCallback
-      tray = systrayNew
-      batt = batteryBarNew defaultBatteryConfig 60.0
+      tray = sniTrayNew
+      batt = batteryIconNew
   in
     -- TODO: add this back in with taffybar2
     -- defaultTaffybar . handleDBusToggle $
-    defaultTaffybar
-      defaultTaffybarConfig { barHeight = 22
+    simpleTaffybar
+      defaultSimpleTaffyConfig { barHeight = 22
                             , widgetSpacing = 10
-                            , startWidgets = [ pager, note ]
+                            , startWidgets = [ workspaces, note ]
                             , endWidgets = [ clock, tray, batt, mem, cpu, mpris2 ]
                             }
