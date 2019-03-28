@@ -1,7 +1,7 @@
 (defun haskell-doctest-file ()
     "Run doctest on the current buffer's file"
     (interactive)
-    (shell-command (concat "doctest " buffer-file-name)))
+    (shell-command (concat "nix-shell" "-p" "haskellPackages.doctest" "--run" "doctest" buffer-file-name)))
 
 (setq haskell-ajm-packages
       '(haskell-mode))
