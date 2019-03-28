@@ -102,6 +102,7 @@ in
         firefox
         gimp
         gnupg
+        hicolor-icon-theme
         htop
         imagemagick
         inkscape
