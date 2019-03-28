@@ -62,5 +62,5 @@ main =
       defaultSimpleTaffyConfig { barHeight = 22
                             , widgetSpacing = 10
                             , startWidgets = [ workspaces, note ]
-                            , endWidgets = [ clock, tray, batt, mem, cpu, mpris2 ]
+                            , endWidgets = [ clock, {- tray, batt, -} mem, cpu, mpris2 ]
                             }
