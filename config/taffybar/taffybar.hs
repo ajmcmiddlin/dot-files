@@ -45,7 +45,7 @@ main =
                                                       ]
                                   , graphLabel = Just "cpu"
                                   }
-      clock = textClockNew Nothing "<span fgcolor='white'>%a %d %b %Y %H:%M:%S UTC+10</span>" 1
+      clock = textClockNew Nothing "<span size='large' fgcolor='white'>%a %d %b %Y %H:%M:%S UTC+10</span>" 1
       -- pager = taffyPagerNew defaultPagerConfig
       workspaces = workspacesNew defaultWorkspacesConfig
       note = notifyAreaNew defaultNotificationConfig

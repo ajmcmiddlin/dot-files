@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 status-notifier-watcher &
-taffybar &
+GDK_DPI_SCALE=0.8 taffybar &
 nm-applet &
 blueman-applet &
 owncloud &
