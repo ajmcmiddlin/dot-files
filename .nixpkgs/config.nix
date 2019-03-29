@@ -101,8 +101,12 @@ in
         feh
         firefox
         gimp
-        gnupg
+
+        # For taffybar/applet icons
+        gnome2.gnome_icon_theme
         hicolor-icon-theme
+
+        gnupg
         htop
         imagemagick
         inkscape
@@ -132,6 +136,8 @@ in
         unstable.signal-desktop
         silver-searcher
         slop
+        # For taffybar's SNI tray
+        haskellPackages.status-notifier-item
         sublime3
         haskellPackages.taffybar
         telnet

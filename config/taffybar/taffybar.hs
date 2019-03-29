@@ -59,8 +59,8 @@ main =
     -- TODO: add this back in with taffybar2
     -- defaultTaffybar . handleDBusToggle $
     simpleTaffybar
-      defaultSimpleTaffyConfig { barHeight = 22
-                            , widgetSpacing = 10
+      defaultSimpleTaffyConfig { -- barHeight = 17
+                            widgetSpacing = 10
                             , startWidgets = [ workspaces, note ]
-                            , endWidgets = [ clock, {- tray, batt, -} mem, cpu, mpris2 ]
+                            , endWidgets = [ clock, tray, batt, mem, cpu, mpris2 ]
                             }
