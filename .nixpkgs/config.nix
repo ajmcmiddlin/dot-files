@@ -102,10 +102,10 @@ in
         firefox
         gimp
 
-        # For taffybar/applet icons
+        # For taffybar tray icons
         gnome2.gnome_icon_theme
         hicolor-icon-theme
-        # To get all tray icons visible
+        # Contains xembed to bridge old icons to SNI
         plasma-workspace
 
         gnupg
@@ -123,6 +123,7 @@ in
         gnome3.dconf
 
         neovim
+        nethogs
         networkmanagerapplet
         nix-prefetch-scripts
         obs-studio

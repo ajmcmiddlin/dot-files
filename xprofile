@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
+xembedsniproxy &
 status-notifier-watcher &
 GDK_DPI_SCALE=0.8 taffybar &
-xembedsniproxy &
 nm-applet --sm-disable --indicator &
 blueman-applet &
 owncloud &
