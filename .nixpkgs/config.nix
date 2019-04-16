@@ -105,6 +105,8 @@ in
         # For taffybar/applet icons
         gnome2.gnome_icon_theme
         hicolor-icon-theme
+        # To get all tray icons visible
+        plasma-workspace
 
         gnupg
         htop

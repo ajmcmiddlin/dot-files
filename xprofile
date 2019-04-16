@@ -2,7 +2,8 @@
 
 status-notifier-watcher &
 GDK_DPI_SCALE=0.8 taffybar &
-nm-applet &
+xembedsniproxy &
+nm-applet --sm-disable --indicator &
 blueman-applet &
 owncloud &
 signal-desktop &
