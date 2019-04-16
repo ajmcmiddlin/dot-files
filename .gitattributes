@@ -1,3 +1,4 @@
 .ssh/config filter=git-crypt diff=git-crypt
 *-encrypted filter=git-crypt diff=git-crypt
 etc/nixos/5520-shares.nix filter=git-crypt diff=git-crypt
+etc/nixos/shares-hermes.nix filter=git-crypt diff=git-crypt

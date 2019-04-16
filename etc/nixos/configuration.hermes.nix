@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ./shares-hermes.nix ];
   nix.buildCores = 2;
 
   networking.hostName = "hermes"; # Define your hostname.
