@@ -155,7 +155,6 @@ in
         volumeicon
         wget
         which
-        wireshark
         xclip
         xorg.xev
         xscreensaver

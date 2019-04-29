@@ -96,6 +96,7 @@
   programs.fish.enable = true;
   programs.bash.enableCompletion = true;
   programs.ssh.startAgent = true;
+  programs.wireshark.enable = true;
 
   # Enable VirtualBox (don't install the package)
   virtualisation.virtualbox.host.enable = true;
