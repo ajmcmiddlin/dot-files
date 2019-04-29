@@ -509,7 +509,7 @@ before packages are loaded."
       (stack "stack.yaml" ("stack" "repl" dante-target))
       (mafia "mafia" ("mafia" "repl" dante-target))
       (bare-cabal ,(lambda (d) (directory-files d t ".cabal$")) ("cabal" "repl" dante-target "--builddir=dist/dante"))
-      (bare-ghci ,(lambda (_) t) ("ghci"))))
+      (bare-ghci ,(lambda (_) t) ("ghci -hidir /tmp -odir /tmp"))))
 
   (setq dante-methods '(nix-new-build new-build nix-ghci bare-cabal bare-ghci))
 
