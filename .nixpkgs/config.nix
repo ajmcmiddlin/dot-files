@@ -248,7 +248,7 @@ in
         ffmpeg
         spotify
         vlc
-        youtube-dl
+        unstable.youtube-dl
       ];
     };
 
