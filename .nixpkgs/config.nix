@@ -143,6 +143,7 @@ in
         # For taffybar's SNI tray
         haskellPackages.status-notifier-item
         sublime3
+        syncthing
         haskellPackages.taffybar
         telnet
         thunderbird
