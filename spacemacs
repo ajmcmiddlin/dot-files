@@ -506,7 +506,7 @@ before packages are loaded."
       (impure-nix dante-cabal-nix ("nix-shell" "--run" (concat "cabal repl " (or dante-target "") " --builddir=dist/dante")))
       (new-build "cabal.project" ("cabal" "new-repl" dante-target "--builddir=dist/dante"))
       (nix-ghci ,(lambda (d) (directory-files d t "shell.nix\\|default.nix"))
-                ("nix-shell" "--pure" "--run" "ghci" (concat "'-hidir " dante-project-root ".ghci-files -odir " dante-project-root ".ghci-files'")))
+                ("nix-shell" "--pure" "--run" "ghci" (concat "-hidir " dante-project-root ".ghci-files -odir " dante-project-root ".ghci-files")))
       ;; (concat "ghci -hidir " dante-project-root ".ghci-files -odir " dante-project-root ".ghci-files")
       (stack "stack.yaml" ("stack" "repl" dante-target))
       (mafia "mafia" ("mafia" "repl" dante-target))
