@@ -100,7 +100,7 @@
 
   # Enable VirtualBox (don't install the package)
   virtualisation.virtualbox.host.enable = true;
-
+  virtualisation.virtualbox.host.enableExtensionPack = true;
   # virtualisation.docker.enable = true;
 
   # List services that you want to enable:
