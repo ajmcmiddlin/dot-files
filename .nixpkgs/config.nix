@@ -148,6 +148,7 @@ in
         telnet
         thunderbird
         tigervnc
+        tor-browser-bundle-bin
         transmission-gtk
         udisks2
         unzip
