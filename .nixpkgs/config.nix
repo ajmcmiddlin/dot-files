@@ -67,6 +67,7 @@ in
     my-haskell-env = buildEnv {
       name = "my-haskell-env";
       paths = with pkgs.haskellPackages; [
+        Agda
         apply-refact
         cabal2nix
         cabal-install
