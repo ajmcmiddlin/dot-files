@@ -100,6 +100,7 @@
 
   # Enable VirtualBox (don't install the package)
   virtualisation.virtualbox.host.enable = true;
+  # NOTE: this eats a source build of VirtualBox. Disable if a rebuild is taking too long.
   virtualisation.virtualbox.host.enableExtensionPack = true;
   # virtualisation.docker.enable = true;
 
