@@ -160,7 +160,6 @@ in
         xorg.xev
         xscreensaver
         yubioath-desktop
-        zoom-us
 
         # For clipboard syncing
         xsel
@@ -271,7 +270,7 @@ in
         (pkgs.bluez.override { enableWiimote = true; })
 
         # This comes from an overlay and doesn't quite work atm
-        xf86-input-xwiimote
+        # xf86-input-xwiimote
         xwiimote
       ];
     };
