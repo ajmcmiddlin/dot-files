@@ -6,7 +6,7 @@
 
 case $1 in
     work)
-        output=HDMI1
+        output=HDMI-1
         mode_name="1920x1200_60"
         mode="193.16  1920 2048 2256 2592  1200 1201 1204 1242  -HSync +Vsync"
         laptop_pos=296x1200
@@ -15,7 +15,7 @@ case $1 in
         break
         ;;
     home)
-         output=DP1
+         output=DP-1
          mode_name="2560x1440_60"
          mode="311.83  2560 2744 3024 3488  1440 1441 1444 1490  -HSync +Vsync"
          laptop_mode=1600x900
@@ -36,13 +36,10 @@ xrandr --addmode $output $mode_name
 # Turn everything except the laptop display off, then enable the output
 # we took as an argument as the primary display, then setup the laptop
 # underneath it.
-xrandr --output VIRTUAL1 --off \
-       --output DP1 --off \
-       --output HDMI2 --off \
-       --output DP1-2 --off \
-       --output DP1-3 --off \
-       --output DP1-1 --off \
-       --output HDMI1 --off \
-       --output DP2 --off \
+xrandr --output VIRTUAL-1 --off \
+       --output DP-1 --off \
+       --output DP-2 --off \
+       --output HDMI-1 --off \
+       --output HDMI-2 --off \
        --output $output --primary --mode $mode_name --pos $pos --rotate normal \
-       --output eDP1 --mode $laptop_mode --pos $laptop_pos --rotate normal
+       --output eDP-1 --mode $laptop_mode --pos $laptop_pos --rotate normal
