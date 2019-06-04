@@ -171,9 +171,9 @@ in
     my-laptop-tools = buildEnv {
       name = "my-laptop-tools";
       paths = [
+        brightnessctl
         powertop
         upower
-        xorg.xbacklight
       ];
     };
 
