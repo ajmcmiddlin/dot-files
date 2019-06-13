@@ -67,7 +67,8 @@ in
     my-haskell-env = buildEnv {
       name = "my-haskell-env";
       paths = with pkgs.haskellPackages; [
-        Agda
+        # Not building on 2019-06-03 after 19.03 upgrade
+        # Agda
         apply-refact
         cabal2nix
         cabal-install
@@ -149,7 +150,8 @@ in
         telnet
         thunderbird
         tigervnc
-        tor-browser-bundle-bin
+        # torbrowser
+        # tor-browser-bundle-bin
         transmission-gtk
         udisks2
         unzip
