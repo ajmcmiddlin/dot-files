@@ -258,6 +258,7 @@ in
       name = "my-recording";
       paths = [
         ardour
+        infamousPlugins
         audacity
 
         jack2Full
