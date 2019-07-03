@@ -67,7 +67,7 @@ in
     my-haskell-env = buildEnv {
       name = "my-haskell-env";
       paths = with pkgs.haskellPackages; [
-        # Not building on 2019-06-03 after 19.03 upgrade
+        # Not building on 2019-06-03 after 19.03 upgrade. Possibly due to new GHC version?
         # Agda
         apply-refact
         cabal2nix
@@ -134,7 +134,7 @@ in
         # openconnect_openssl
         owncloud-client
         pandoc
-        paperboy
+        # paperboy
         pass
         qtpass
         rxvt_unicode-with-plugins
