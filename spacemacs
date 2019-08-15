@@ -43,6 +43,7 @@ This function should only modify configuration layer settings."
      ;; c-c++
      ;; cscope
      csv
+     elm
      emacs-lisp
      git
      github
