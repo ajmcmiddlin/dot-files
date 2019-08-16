@@ -56,7 +56,7 @@ This function should only modify configuration layer settings."
      haskell-ajm
      helm
      html
-     ipython-notebook
+     ;; ipython-notebook
      javascript
      ;; lhaskell-ajm
      markdown
