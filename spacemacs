@@ -95,7 +95,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(nix-sandbox)
+   dotspacemacs-additional-packages '(nix-sandbox direnv)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -549,6 +549,7 @@ before packages are loaded."
         flycheck-executable-find
           (lambda (cmd) (nix-executable-find (nix-current-sandbox) cmd)))
   (setq haskell-process-type 'ghci)
+  (direnv-mode)
   )
 
 (defun dotspacemacs/emacs-custom-settings ()
