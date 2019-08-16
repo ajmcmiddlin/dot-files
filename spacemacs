@@ -43,7 +43,8 @@ This function should only modify configuration layer settings."
      ;; c-c++
      ;; cscope
      csv
-     elm
+     (elm :variables
+          elm-sort-imports-on-save t)
      emacs-lisp
      git
      github
@@ -501,6 +502,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (add-hook 'elm-mode-hook 'elm-format-on-save-mode)
   ;; Stop flycheck using stack.
   ;; (setq-default flycheck-haskell-runghc-command `(,(funcall 'flycheck-executable-find "runghc") "-i"))
   (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
