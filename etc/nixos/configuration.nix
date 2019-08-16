@@ -3,7 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  lorri = import /etc/nixos/lorri.nix;
+in
 {
   # Needed for corefonts
   nixpkgs.config.allowUnfree = true;
@@ -14,6 +16,7 @@
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       /etc/nixos/machine-specific.nix
+      "${lorri.src}/direnv/nixos.nix"
     ];
 
   nix.binaryCaches = [

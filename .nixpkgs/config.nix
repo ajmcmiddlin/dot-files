@@ -21,6 +21,8 @@ let
     foldl
   ];
 
+  lorri = import /etc/nixos/lorri.nix;
+
   unstable = import <unstable> {};
 in
 {
@@ -118,6 +120,7 @@ in
         keepassx
         keychain
         libreoffice
+        lorri
         maim
         gnome3.nautilus
 
