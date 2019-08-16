@@ -503,10 +503,14 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (add-hook 'elm-mode-hook 'elm-format-on-save-mode)
+  ; Elm's indentation requires elm-oracle, which doesn't work with 0.19.
+  ; (add-hook 'elm-mode-hook 'company-mode)
+
   ;; Stop flycheck using stack.
   ;; (setq-default flycheck-haskell-runghc-command `(,(funcall 'flycheck-executable-find "runghc") "-i"))
   (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
   (add-hook 'haskell-mode-hook 'dante-mode)
+  (add-hook 'haskell-mode-hook 'company-mode)
   (add-hook 'dante-mode-hook
             '(lambda ()
                (flycheck-add-next-checker 'haskell-dante
