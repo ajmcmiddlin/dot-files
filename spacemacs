@@ -44,7 +44,8 @@ This function should only modify configuration layer settings."
      ;; cscope
      csv
      (elm :variables
-          elm-sort-imports-on-save t)
+          elm-sort-imports-on-save t
+          elm-indent-offset 2)
      emacs-lisp
      git
      github
